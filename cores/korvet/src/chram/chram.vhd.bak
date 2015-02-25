@@ -1,0 +1,43 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
+
+entity chram is
+   Port (
+      CLK         : in  std_logic;
+      CHRAM_A     : in  std_logic_vector(9 downto 0);
+      CHRAM_WR    : in  std_logic;
+      CHRAM_DI    : in  std_logic_vector(8 downto 0);
+      CHRAM_DO    : out std_logic_vector(8 downto 0);
+      CHRAM_VA    : in  std_logic_vector(9 downto 0);
+      CHRAM_VD    : out std_logic_vector(8 downto 0)
+   );
+end chram;
+
+architecture rtl of chram is
+
+   subtype word_t is std_logic_vector(8 downto 0);
+   type memory_t is array(0 to 1023) of word_t;
+   shared variable ram : memory_t;
+
+begin
+
+   process(CLK)
+   begin
+      if rising_edge(CLK) then 
+         if CHRAM_WR = '1' then
+            ram(to_integer(unsigned(CHRAM_A))) := CHRAM_DI;
+         else
+            CHRAM_DO <= ram(to_integer(unsigned(CHRAM_A)));
+         end if;
+      end if;
+   end process;   
+   
+   process(CLK)
+   begin
+      if rising_edge(CLK) then 
+         CHRAM_VD <= ram(to_integer(unsigned(CHRAM_VA)));
+      end if;
+   end process;
+ 
+end rtl;
