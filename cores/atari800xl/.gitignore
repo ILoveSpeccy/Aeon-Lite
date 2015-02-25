@@ -1,0 +1,10 @@
+ise/_ngo/
+ise/_xmsgs/
+ise/iseconfig/
+ise/xlnx_auto_0_xdb/
+ise/xst/
+ise/*
+!ise/Atari_800.xise
+src/pll/_xmsgs
+src/pll/pll
+src/pll/tmp
