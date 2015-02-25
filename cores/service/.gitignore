@@ -1,0 +1,16 @@
+ise/_ngo/
+ise/_xmsgs/
+ise/iseconfig/
+ise/xlnx_auto_0_xdb/
+ise/xst/
+ise/*
+!ise/*.xise
+src/clock/_xmsgs
+src/clock/clock
+src/clock/tmp
+src/fontrom/_xmsgs
+src/fontrom/fontrom
+src/fontrom/tmp
+src/vram/_xmsgs
+src/vram/vram
+src/vram/tmp
