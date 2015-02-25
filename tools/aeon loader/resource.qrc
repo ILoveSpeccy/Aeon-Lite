@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>chip.ico</file>
+    </qresource>
+</RCC>
