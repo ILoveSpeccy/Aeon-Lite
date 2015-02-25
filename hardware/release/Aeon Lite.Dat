@@ -1,0 +1,43 @@
+Field=Comment~String~Comment~125|Field=Description~String~Description~179|Field=Designator~String~Designator~112|Field=Footprint~String~Footprint~112|Field=Value~String~Value~100|Field=Quantity~Integer~Quantity~110|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~Aeon Lite.PrjPcb|ReportField=ProjectFullPath~D:\Projects\Aeon Lite Hardware (Release)\Aeon Lite.PrjPcb|ReportField=Title~Bill of Materials For Project [Aeon Lite.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~165|ReportField=ReportTime~16:25:20|ReportField=ReportDate~01.03.2014|ReportField=ReportDateTime~01.03.2014 16:25:20|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~01.03.2014|ReportField=CurrentTime~16:23:46|ReportField=Date~|ReportField=DocumentFullPathAndName~D:\Projects\Aeon Lite Hardware (Release)\Controller.SchDoc|ReportField=DocumentName~Controller.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~11.02.2014|ReportField=Organization~|ReportField=ProjectName~Aeon Lite.PrjPcb|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~Aeon Lite.PrjPcb|ReportField=DataSourceFullPath~D:\Projects\Aeon Lite Hardware (Release)\Aeon Lite.PrjPcb
+3V||BAT1|CR2032 HOLDER - Vertical||1
+Cap|Capacitor|C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C23, C24, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C40, C41, C42, C43, C44, C45, C46, C47, C48, C49, C50, C51, C52, C53, C54, C55, C56, C57, C58, C59, C60|6-0805_n|100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 1µF, 100nF, 1µF, 100nF, 10µF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF, 22pF, 22pF, 100nF, 100nF, 100nF, 100nF, 100nF, 100nF|55
+Cap Pol3|Polarized Capacitor (Surface Mount)|C22, C25, C26, C27, C61|ECAP 6.3mm|100µF|5
+Capacitor|Capacitor|C39, C62|RESC2012N|100nF|2
+Diode|Default Diode|D1, D2, D3|SMB||3
+BAT54S|Schottky Barrier Double Diode|D4, D5, D6, D7, D9, D10, D11, D12, D13, D14, D15|SOT23_N||11
+POWER|Typical INFRARED GaAs LED|D8|HDR1X2||1
+FL_ACTIVE|Typical INFRARED GaAs LED|D16|HDR1X2||1
+SD_ACTIVE|Typical INFRARED GaAs LED|D17, D18, D19|6-0805_N||3
+BA592|Silicon RF Switching Diode for VHF Band Switching in TV/VTR Tuners|D20, D21|SOD-323||2
+SD_ACTIVE|Typical INFRARED GaAs LED|D81|HDR1X2||1
+Header 6|Header, 6-Pin|ICSP, JTAG|HDR1X6||2
+Exp.header FPGA|Header, 12-Pin, Dual row|IO0|HDR2X12||1
+Audio||J1|SJ1-353XNG||1
+1-1470156-1|USB 1.1, Right Angle, Thru-Hole, B Type, Receptacle, 4 Position, White|J2|440119||1
+Joystick||JOY0, JOY1|Mini DIN PS/2||2
+Power||P1|Power Jack||1
+Exp.header PIC24|Header, 12-Pin, Dual row|P2|HDR2X12||1
+PIC24FJ256GB106-I/PT|General Purpose 16-Bit Flash Microcontroller with USB On-The-Go, 256KB Flash, 16KB SRAM, 64-Pin TQFP, Industrial Temperature|PIC24|TQFP-PT64_N||1
+BT2||Power|Push Button 6mm - Right Angle||1
+KB/MS||PS2|Mini DIN PS/2||1
+BF547|NPN 1 GHz Wideband Transistor|Q1|SOT23_N||1
+Res2|Resistor|R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R42, R43, R48, R331|6-0805_N|510, 1K, 2K, 4K, 510, 1K, 2K, 4K, 510, 1K, 2K, 4K, 120, 120, 2K, 2K, 2K, 2K, 120, 120, 120, 120, 10K, 10K, 330, 4.7K, 4.7K, 4.7K, 4.7K, 100, 10K, 330, 10K, 120, 120, 10K, 10K, 4.7K, 330, 330, 330, 10K, 330|43
+10K||R26, R41|SMD 4 Resisor Network||2
+Resistor|Resistor|R44, R45, R46, R47|RESC2012N|2.2K, 2.2K, 0R, 10K|4
+BT1||Reset|Push Button 6mm||1
+Buzzer|Magnetic Buzzer|S1|Buzzer||1
+SD Card||SD0|SD-Card Connector OK||1
+R1LV0816ASB|8Mbit (512Kb x 16) Asynchron Static RAM|SRAM0, SRAM1|TSOP44||2
+XC6SLX9-3TQG144C|Spartan-6 LX 1.2V FPGA, 102 User I/Os, 144-Pin TQFP (0.5mm Pitch), Speed Grade 3, Commercial Grade, Pb-Free|U1|TQG144_N||1
+LM1117-5|800mA Low-Dropout Linear Regulator, 3-pin TO-252|U2|TD03B_M||1
+LM1117-3.3|800mA Low-Dropout Linear Regulator, 3-pin TO-252|U3|TD03B_M||1
+NCP566||U4|SOT223||1
+MC74HC244ADW|Octal 3-State Non-Inverting Buffer/Line Driver/Line Receiver|U5|948E-02_N||1
+AT45DB321D||U6|SOIC8||1
+SN74LVC257PW|Quadruple 2-Line to 1-Line Data Selector/Multiplexer with 3-State Outputs|U7|PW016_N||1
+AT24LC512|1Kbit (128 x 8), 2-wire Bus Automotive Serial EEPROM with Write Protect, 2.5V, 8-Pin SOIC, Bulk|U8|8S1_N||1
+DS1307Z|64 X 8 Serial Real-Time Clock|U9|SOIC8N_N||1
+VGA Connector||VGA|VGA Connector||1
+Oscillator||XT0|Oscillator SMD 7x5mm|50MHz|1
+XTAL||XT1|Quartz HC-49|8MHz|1
+XTAL||XT2|SMD Clock Quarz|32.768kHz|1

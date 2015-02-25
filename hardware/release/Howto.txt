@@ -1,0 +1,7 @@
+R39 Text unsichtbar
+C51 Text unsichtbar
+U6  Text tiefer setzen
+XT2 Text oben setzen
+ICSP & FPGA JTAG Connectro Pin 1 kennzeichnen
+Freie Fläche oberhalb FPGA könnte man für Logo benutzen
+

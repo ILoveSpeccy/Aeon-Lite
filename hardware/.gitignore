@@ -1,0 +1,5 @@
+*.7z
+release/Fabrication Outputs/
+release/__Previews
+datasheets/
+prototype/
