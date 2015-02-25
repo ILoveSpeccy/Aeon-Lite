@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Bootloader" />
+		<Option pch_mode="2" />
+		<Option compiler="xc16" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/bootloader.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+			</Target>
+			<Environment>
+				<Variable name="MCU" value="24FJ256GB106" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-Os" />
+			<Add option="-Wall" />
+			<Add option="-mcpu=$(MCU)" />
+			<Add option="-x c" />
+			<Add option="-omf=elf" />
+			<Add option="-fno-short-double" />
+			<Add directory="." />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+			<Add option="-mcpu=$(MCU)" />
+			<Add option="-Wl,--report-mem,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,-D__BOOTLOADER,--no-force-link,--smart-io" />
+			<Add option="-Thid_boot_p$(MCU).gld" />
+		</Linker>
+		<Unit filename="app_hid_boot_loader.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="app_hid_boot_loader.h" />
+		<Unit filename="app_led_usb_status.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="app_led_usb_status.h" />
+		<Unit filename="boot.h" />
+		<Unit filename="buttons.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="buttons.h" />
+		<Unit filename="io_mapping.h" />
+		<Unit filename="leds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="leds.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system.h" />
+		<Unit filename="system_config.h" />
+		<Unit filename="usb/usb.h" />
+		<Unit filename="usb/usb_ch9.h" />
+		<Unit filename="usb/usb_common.h" />
+		<Unit filename="usb/usb_device.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device.h" />
+		<Unit filename="usb/usb_device_hid.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device_hid.h" />
+		<Unit filename="usb/usb_device_local.h" />
+		<Unit filename="usb/usb_hal.h" />
+		<Unit filename="usb/usb_hal_pic24f.h" />
+		<Unit filename="usb_config.h" />
+		<Unit filename="usb_descriptors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
