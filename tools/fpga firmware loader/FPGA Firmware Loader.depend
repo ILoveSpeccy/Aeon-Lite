@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1287079100 source:d:\aeon lite sdk\fpga firmware loader\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<usb.h>
+	"bitinfo.h"
+	"progress.h"
+
+1286742940 d:\aeon lite sdk\fpga firmware loader\bitinfo.h
+
+1225587280 d:\aeon lite sdk\fpga firmware loader\progress.h
+
+1225428526 source:d:\aeon lite sdk\fpga firmware loader\bitinfo.c
+	<stdio.h>
+	<fcntl.h>
+	<stdlib.h>
+	<string.h>
+	"bitinfo.h"
+
+1225765136 source:d:\aeon lite sdk\fpga firmware loader\progress.c
+	<stdio.h>
+	<string.h>
+	"progress.h"
+
+1404296672 source:d:\projects\aeon lite\tools\fpga firmware loader\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<fcntl.h>
+	<lusb0_usb.h>
+	"bitinfo.h"
+	"progress.h"
+
+1310455920 d:\programs\dev\codeblocks embedded edition\libraries\libusb\include\lusb0_usb.h
+	<stdlib.h>
+	<windows.h>
+	<pshpack1.h>
+	<poppack.h>
+
+1286746500 d:\projects\aeon lite\tools\fpga firmware loader\bitinfo.h
+
+1225590840 d:\projects\aeon lite\tools\fpga firmware loader\progress.h
+
+1225768680 source:d:\projects\aeon lite\tools\fpga firmware loader\progress.c
+	<stdio.h>
+	<string.h>
+	"progress.h"
+
