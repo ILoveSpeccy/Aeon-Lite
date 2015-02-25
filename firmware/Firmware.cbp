@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Firmware" />
+		<Option pch_mode="2" />
+		<Option compiler="xc16" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Firmware.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+			</Target>
+			<Environment>
+				<Variable name="chip" value="24FJ256GB206" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-O2" />
+			<Add option="-Wall" />
+			<Add option="-mcpu=$(chip)" />
+			<Add directory="." />
+			<Add directory="./usb" />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+			<Add option="-mcpu=$(chip)" />
+			<Add option="-Wl,--report-mem,--heap=512,--data-init" />
+			<Add option="-Tld/hid_boot_p$(chip).gld" />
+		</Linker>
+		<Unit filename="dataflash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dataflash.h" />
+		<Unit filename="fat/diskio.h" />
+		<Unit filename="fat/ff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fat/ff.h" />
+		<Unit filename="fat/ffconf.h" />
+		<Unit filename="fat/integer.h" />
+		<Unit filename="fat/mmc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fpga.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fpga.h" />
+		<Unit filename="hardware.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hardware.h" />
+		<Unit filename="ld/hid_boot_p24FJ128GB106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ128GB206.gld" />
+		<Unit filename="ld/hid_boot_p24FJ192GB106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ256GB106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ256GB206.gld" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="timer.h" />
+		<Unit filename="usb/usb.h" />
+		<Unit filename="usb/usb_ch9.h" />
+		<Unit filename="usb/usb_common.h" />
+		<Unit filename="usb/usb_config.h" />
+		<Unit filename="usb/usb_descriptors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device.h" />
+		<Unit filename="usb/usb_device_cdc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device_cdc.h" />
+		<Unit filename="usb/usb_device_generic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device_generic.h" />
+		<Unit filename="usb/usb_device_local.h" />
+		<Unit filename="usb/usb_hal.h" />
+		<Unit filename="usb/usb_hal_pic24f.h" />
+		<Unit filename="usb_handler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb_handler.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

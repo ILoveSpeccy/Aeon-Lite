@@ -1,0 +1,167 @@
+# depslib dependency file v1.0
+1424880022 source:d:\usb_pic24\main.c
+	<stdio.h>
+	"hardware.h"
+	"timer.h"
+	"usb_handler.h"
+	"fpga.h"
+
+1424880237 d:\usb_pic24\usb_handler.h
+
+1424866477 source:d:\usb_pic24\usb\usb_device.c
+	<stdint.h>
+	<stddef.h>
+	"hardware.h"
+	"usb_config.h"
+	<usb/usb.h>
+	<usb/usb_ch9.h>
+	<usb/usb_device.h>
+	<usb/usb_device_local.h>
+	"usb/usb_device_msd.h"
+
+1424841852 d:\usb_pic24\usb\system.h
+	<p24FJ256GB206.h>
+
+1407196141 d:\usb_pic24\usb\system_config.h
+	"usb_config.h"
+
+1424877988 d:\usb_pic24\usb\usb_config.h
+	<stdint.h>
+
+1424866459 d:\usb_pic24\usb\usb.h
+	"hardware.h"
+	"usb_config.h"
+	<usb/usb_common.h>
+	<usb/usb_ch9.h>
+	<usb/usb_device.h>
+	<usb/usb_host.h>
+	<usb/usb_otg.h>
+	<usb/usb_hal.h>
+
+1424866470 d:\usb_pic24\usb\usb_common.h
+	<limits.h>
+	<stdbool.h>
+	<stdint.h>
+	"hardware.h"
+	"usb_config.h"
+
+1407196208 d:\usb_pic24\usb\usb_ch9.h
+	<stdint.h>
+
+1407196223 d:\usb_pic24\usb\usb_device.h
+	<usb/usb_common.h>
+	<stdint.h>
+	<usb/usb_hal.h>
+
+1407196223 d:\usb_pic24\usb\usb_hal.h
+	<stdint.h>
+	"usb/usb_hal_pic16f1.h"
+	"usb/usb_hal_pic18.h"
+	<usb/usb_hal_dspic33e.h>
+	<usb/usb_hal_pic24e.h>
+	<usb/usb_hal_pic24f.h>
+	"usb/usb_hal_pic32.h"
+
+1424866473 d:\usb_pic24\usb\usb_hal_pic24f.h
+	"hardware.h"
+	"usb_config.h"
+	<stdint.h>
+	<string.h>
+	<usb/usb_common.h>
+
+1424866277 d:\usb_pic24\usb\usb_device_local.h
+	"usb_config.h"
+
+1424875302 source:d:\usb_pic24\usb\usb_device_cdc.c
+	<hardware.h>
+	<usb/usb.h>
+	<usb/usb_device_cdc.h>
+
+1407196223 d:\usb_pic24\usb\usb_device_cdc.h
+	<usb/usb.h>
+	"usb_config.h"
+
+1407196208 source:d:\usb_pic24\usb\usb_device_generic.c
+	"usb/usb.h"
+	"./usb/usb_device_generic.h"
+
+1407196223 d:\usb_pic24\usb\usb_device_generic.h
+	<stdint.h>
+	"usb_config.h"
+
+1424875483 source:d:\usb_pic24\usb_handler.c
+	<usb/usb.h>
+	<usb/usb_device.h>
+	<usb/usb_device_cdc.h>
+	<usb/usb_device_generic.h>
+	"usb_handler.h"
+
+1424877205 source:d:\usb_pic24\usb\usb_descriptors.c
+	<usb/usb.h>
+	<usb/usb_device_generic.h>
+	<usb/usb_device_cdc.h>
+
+1424880247 d:\usb_pic24\hardware.h
+	<P24FJ128GB106.h>
+	<P24FJ256GB106.h>
+	<P24FJ128GB206.h>
+	<P24FJ256GB206.h>
+
+1407196208 d:\usb_pic24\usb\usb_device_hid.h
+	<usb/usb_ch9.h>
+
+1424866282 source:d:\usb_pic24\usb\usb_device_hid.c
+	"usb_config.h"
+	<usb/usb.h>
+	<usb/usb_device_hid.h>
+
+1424880197 source:d:\usb_pic24\hardware.c
+	<pps.h>
+	<uart.h>
+	<i2c.h>
+	"hardware.h"
+
+1424880191 source:d:\usb_pic24\dataflash.c
+	"dataflash.h"
+	"hardware.h"
+
+1424880260 d:\usb_pic24\dataflash.h
+
+1424670322 source:d:\usb_pic24\fat\ff.c
+	"ff.h"
+	"diskio.h"
+	<stdarg.h>
+
+1424670322 d:\usb_pic24\fat\ff.h
+	"integer.h"
+	"ffconf.h"
+
+1424670322 d:\usb_pic24\fat\integer.h
+	<windows.h>
+	<tchar.h>
+
+1424670322 d:\usb_pic24\fat\ffconf.h
+
+1424670322 d:\usb_pic24\fat\diskio.h
+	"integer.h"
+
+1424670322 source:d:\usb_pic24\fat\mmc.c
+	"diskio.h"
+	"../hardware.h"
+
+1424880188 source:d:\usb_pic24\fpga.c
+	<string.h>
+	"hardware.h"
+	"fat/ff.h"
+	"fpga.h"
+	"dataflash.h"
+
+1424880255 d:\usb_pic24\fpga.h
+
+1424880203 source:d:\usb_pic24\timer.c
+	"timer.h"
+	"fat/diskio.h"
+	"hardware.h"
+
+1424880241 d:\usb_pic24\timer.h
+
