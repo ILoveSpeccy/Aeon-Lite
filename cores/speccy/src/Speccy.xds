@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<DesignStrategy goal="Balanced" strategy="Speccy" version="12.1">
+
+  <Description>The Default strategy provides a balanced optimization of performance results vs. runtime. The default property values correspond to the default values of each of the underlying implementation tools. This strategy keeps all properties in an unlocked state so that you can modify the values as you wish.</Description>
+
+  <DeviceList devices="spartan6"/>
+
+  <Properties>
+    <property name="Synthesize - XST:Optimization Goal" value="Area"/>
+    <property name="Synthesize - XST:Optimization Effort" value="High"/>
+    <property name="Synthesize - XST:Keep Hierarchy" value="Yes"/>
+    <property name="Synthesize - XST:Use DSP Block" value="No"/>
+    <property name="Synthesize - XST:Equivalent Register Removal" value="false"/>
+  </Properties>
+
+</DesignStrategy>
