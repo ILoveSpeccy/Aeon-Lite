@@ -13,7 +13,7 @@
 				<Option compiler="xc16" />
 			</Target>
 			<Environment>
-				<Variable name="chip" value="24FJ256GB206" />
+				<Variable name="chip" value="24FJ128GB106" />
 			</Environment>
 		</Build>
 		<Compiler>
@@ -74,10 +74,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="usb/usb_device.h" />
-		<Unit filename="usb/usb_device_cdc.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="usb/usb_device_cdc.h" />
 		<Unit filename="usb/usb_device_generic.c">
 			<Option compilerVar="CC" />
 		</Unit>

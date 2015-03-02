@@ -19,7 +19,6 @@
 
 #include <usb/usb.h>
 #include <usb/usb_device.h>
-#include <usb/usb_device_cdc.h>
 #include <usb/usb_device_generic.h>
 #include "usb_handler.h"
 #include "fpga.h"
@@ -63,10 +62,6 @@ bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size
             USBEnableEndpoint(USBGEN_EP_NUM,USB_OUT_ENABLED|USB_IN_ENABLED|USB_HANDSHAKE_ENABLED|USB_DISALLOW_SETUP);
             USBGenericOutHandle = USBGenRead(USBGEN_EP_NUM,(uint8_t*)&USBGenericOutPacket,USBGEN_EP_SIZE);
 
-            break;
-
-        case EVENT_EP0_REQUEST:
-           USBCheckCDCRequest();
             break;
 
          default:

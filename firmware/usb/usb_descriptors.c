@@ -151,7 +151,6 @@ state according to the definition in the USB specification.
 /** INCLUDES *******************************************************/
 #include <usb/usb.h>
 #include <usb/usb_device_generic.h>
-#include <usb/usb_device_cdc.h>
 
 /** CONSTANTS ******************************************************/
 #if defined(COMPILER_MPLAB_C18)
@@ -168,8 +167,8 @@ const USB_DEVICE_DESCRIPTOR device_dsc=
     0x00,                   // Subclass code
     0x00,                   // Protocol code
     USB_EP0_BUFF_SIZE,      // Max packet size for EP0, see usb_config.h
-    0x04D8,                 // Vendor ID: 0x04D8 is Microchip's Vendor ID
-    0x007F,                 // Product ID: 0x007F
+    0xF055,                 // Vendor ID: 0xF055 (FOSS = Free and Open Source Software)
+    0xFFF0,                 // Product ID: 0xFFF0 (Aeon Lite)
     0x0000,                 // Device release number in BCD format
     0x01,                   // Manufacturer string index
     0x02,                   // Product string index
@@ -182,10 +181,10 @@ const uint8_t configDescriptor1[]={
     /* Configuration Descriptor */
     0x09,//sizeof(USB_CFG_DSC),    // Size of this descriptor in bytes
     USB_DESCRIPTOR_CONFIGURATION,                // CONFIGURATION descriptor type
-    89,0x00,                  // Total length of data for this cfg
-    2,                        // Number of interfaces in this cfg
+    0x20,0x00,                  // Total length of data for this cfg
+    1,                        // Number of interfaces in this cfg
     1,                        // Index value of this configuration
-    2,                        // Configuration string index
+    0,                        // Configuration string index
     _DEFAULT | _SELF,         // Attributes, see usb_device.h
     50,                       // Max power consumption (2X mA)
 
@@ -213,78 +212,7 @@ const uint8_t configDescriptor1[]={
     USBGEN_EP_NUM | _EP_IN,                   //EndpointAddress
     _BULK,                       //Attributes
     USBGEN_EP_SIZE,0x00,        //size
-    1,                          //Interval
-
-    /* Interface Descriptor */
-    8,//sizeof(USB_INTF_DSC),   // Size of this descriptor in bytes
-    0x0b,               // INTERFACE descriptor type
-    1,
-    1,
-    COMM_INTF,              // Class code
-    ABSTRACT_CONTROL_MODEL, // Subclass code
-    V25TER,                 // Protocol code
-    0,                      // Interface string index
-
-    /* Interface Descriptor */
-    9,//sizeof(USB_INTF_DSC),   // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,               // INTERFACE descriptor type
-    1,                      // Interface Number
-    0,                      // Alternate Setting Number
-    3,                      // Number of endpoints in this intf
-    COMM_INTF,              // Class code
-    ABSTRACT_CONTROL_MODEL,                      // Subclass code
-    V25TER,            // Protocol code
-    0,                      // Interface string index
-
-    /* CDC Class-Specific Descriptors */
-    sizeof(USB_CDC_HEADER_FN_DSC),
-    CS_INTERFACE,
-    DSC_FN_HEADER,
-    0x10,0x01,
-
-    sizeof(USB_CDC_ACM_FN_DSC),
-    CS_INTERFACE,
-    DSC_FN_ACM,
-    USB_CDC_ACM_FN_DSC_VAL,
-
-    sizeof(USB_CDC_UNION_FN_DSC),
-    CS_INTERFACE,
-    DSC_FN_UNION,
-    CDC_COMM_INTF_ID,
-    CDC_DATA_INTF_ID,
-
-    sizeof(USB_CDC_CALL_MGT_FN_DSC),
-    CS_INTERFACE,
-    DSC_FN_CALL_MGT,
-    0x00,
-    CDC_DATA_INTF_ID,
-
-    /* Endpoint Descriptor */
-    //sizeof(USB_EP_DSC),DSC_EP,_EP02_IN,_INT,CDC_INT_EP_SIZE,0x02,
-    0x07,/*sizeof(USB_EP_DSC)*/
-    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor
-    CDC_COMM_EP | _EP_IN,            //EndpointAddress
-    _INTERRUPT,                       //Attributes
-    0x08,0x00,                  //size
-    0x02,                       //Interval
-
-    /* Endpoint Descriptor */
-    //sizeof(USB_EP_DSC),DSC_EP,_EP03_OUT,_BULK,CDC_BULK_OUT_EP_SIZE,0x00,
-    0x07,/*sizeof(USB_EP_DSC)*/
-    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor
-    CDC_DATA_EP | _EP_OUT,            //EndpointAddress
-    _BULK,                       //Attributes
-    0x40,0x00,                  //size
-    0x00,                       //Interval
-
-    /* Endpoint Descriptor */
-    //sizeof(USB_EP_DSC),DSC_EP,_EP03_IN,_BULK,CDC_BULK_IN_EP_SIZE,0x00
-    0x07,/*sizeof(USB_EP_DSC)*/
-    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor
-    CDC_DATA_EP | _EP_IN,            //EndpointAddress
-    _BULK,                       //Attributes
-    0x40,0x00,                  //size
-    0x00                       //Interval
+    1                          //Interval
 };
 
 //Language code string descriptor

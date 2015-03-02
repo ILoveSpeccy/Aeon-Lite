@@ -56,8 +56,8 @@
                                  // that use EP0 IN or OUT for sending large amounts of
                                  // application related data.
 
-#define USB_MAX_NUM_INT       2  //Set this number to match the maximum interface number used in the descriptors for this firmware project
-#define USB_MAX_EP_NUMBER	   3  //Set this number to match the maximum endpoint number used in the descriptors for this firmware project
+#define USB_MAX_NUM_INT       1  //Set this number to match the maximum interface number used in the descriptors for this firmware project
+#define USB_MAX_EP_NUMBER	   1  //Set this number to match the maximum endpoint number used in the descriptors for this firmware project
 
 //Device descriptor - if these two definitions are not defined then
 //  a const USB_DEVICE_DESCRIPTOR variable by the exact name of device_dsc
@@ -177,27 +177,12 @@
 
 /** DEVICE CLASS USAGE *********************************************/
 #define USB_USE_GEN
-#define USB_USE_CDC
 
 /** ENDPOINTS ALLOCATION *******************************************/
 
 /* Generic */
 #define USBGEN_EP_SIZE           64
 #define USBGEN_EP_NUM            1
-
-/* CDC */
-#define CDC_COMM_INTF_ID        0x01
-#define CDC_COMM_EP             2
-#define CDC_COMM_IN_EP_SIZE     10
-///#define CDC_COMM_IN_EP_SIZE     8
-
-#define CDC_DATA_INTF_ID        0x01
-#define CDC_DATA_EP             3
-#define CDC_DATA_IN_EP_SIZE     64
-#define CDC_DATA_OUT_EP_SIZE    64
-
-//#define USB_CDC_SUPPORT_ABSTRACT_CONTROL_MANAGEMENT_CAPABILITIES_D2 //Send_Break command
-#define USB_CDC_SUPPORT_ABSTRACT_CONTROL_MANAGEMENT_CAPABILITIES_D1 //Set_Line_Coding, Set_Control_Line_State, Get_Line_Coding, and Serial_State commands
 
 /** DEFINITIONS ****************************************************/
 
