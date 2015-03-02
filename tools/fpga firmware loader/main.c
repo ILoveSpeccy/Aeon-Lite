@@ -7,8 +7,8 @@
 #include "bitinfo.h"    // Get Xilinx .bit-Header information
 #include "progress.h"   // Progress bar
 
-#define MY_VID 0x04D8
-#define MY_PID 0x007F
+#define MY_VID 0xF055
+#define MY_PID 0xFFF0
 
 #define EP_IN 0x81
 #define EP_OUT 0x01
