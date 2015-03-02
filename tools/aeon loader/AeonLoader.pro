@@ -22,8 +22,8 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui
 
-INCLUDEPATH += C:/Dev/Qt/libs/libusb/include
-LIBS += C:/Dev/Qt/libs/libusb/lib/gcc/libusb.a
+INCLUDEPATH += D:/Inspiron/Dev/Qt/libs/libusb/include
+LIBS += D:/Inspiron/Dev/Qt/libs/libusb/lib/gcc/libusb.a
 
 RESOURCES += \
     resource.qrc

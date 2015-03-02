@@ -3,8 +3,8 @@
 #include <lusb0_usb.h>  // libUSB, http://libusb.sourceforge.net/
 #include "bitfile.h"
 
-#define MY_VID      0x04D8
-#define MY_PID      0x007F
+#define MY_VID      0xF055
+#define MY_PID      0xFFF0
 
 #define EP_IN       0x81
 #define EP_OUT      0x01
