@@ -17,17 +17,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _USB_HANDLER_H_
-#define _USB_HANDLER_H_
+#ifndef _WD1793_H_
+#define _WD1793_H_
 
-#define CMD_RTC_READ                      0x10
-#define CMD_RTC_WRITE                     0x11
+void WD1793_Reset(unsigned char drive);
+void WD1793_Write(unsigned char Address, unsigned char Value);
+void WD1793_Config(unsigned char Value);
+unsigned char WD1793_Read(unsigned char Address);
 
-#define CMD_FPGA_GET_STATUS               0xA0
-#define CMD_FPGA_RESET                    0xA1
-#define CMD_FPGA_WRITE_BITSTREAM          0xA2
-
-void USB_Init(void);
-void USB_Handler(void);
-
-#endif // _USB_HANDLER_H_
+#endif // _WD1793_H_

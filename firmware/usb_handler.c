@@ -19,9 +19,11 @@
 
 #include <usb/usb.h>
 #include <usb/usb_device.h>
+#include <usb/usb_device_cdc.h>
 #include <usb/usb_device_generic.h>
 #include "usb_handler.h"
 #include "fpga.h"
+#include "rtc.h"
 
 volatile USB_HANDLE USBGenericOutHandle;
 volatile USB_HANDLE USBGenericInHandle;
@@ -31,6 +33,7 @@ unsigned char USBGenericInPacket[64];
 
 // Local Functions
 void USB_Generic_Handler(void);
+void USB_Generic_Flush(void);
 
 void USB_Init(void)
 {
@@ -59,9 +62,12 @@ bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size
     {
         case EVENT_CONFIGURED:
             USBGenericInHandle = 0;
-            USBEnableEndpoint(USBGEN_EP_NUM,USB_OUT_ENABLED|USB_IN_ENABLED|USB_HANDSHAKE_ENABLED|USB_DISALLOW_SETUP);
-            USBGenericOutHandle = USBGenRead(USBGEN_EP_NUM,(uint8_t*)&USBGenericOutPacket,USBGEN_EP_SIZE);
+            USBEnableEndpoint(USBGEN_EP_NUM, USB_OUT_ENABLED|USB_IN_ENABLED|USB_HANDSHAKE_ENABLED|USB_DISALLOW_SETUP);
+            USBGenericOutHandle = USBGenRead(USBGEN_EP_NUM, (uint8_t*)&USBGenericOutPacket, USBGEN_EP_SIZE);
+            break;
 
+        case EVENT_EP0_REQUEST:
+            USBCheckCDCRequest();
             break;
 
          default:
@@ -84,28 +90,47 @@ void USB_Generic_Handler(void)
       UserLED1_On;
       switch (USBGenericOutPacket[0])
       {
-         case 0xA0 :    // Get FPGA Status; Byte 0 - INIT_B, Byte 1 - DONE
+         case CMD_FPGA_GET_STATUS:        // Get FPGA Status; Byte 0 - INIT_B, Byte 1 - DONE
          {
             USBGenericInPacket[0] = INIT_B;
             USBGenericInPacket[1] = CONF_DONE;
-            USBGenericInHandle = USBGenWrite(USBGEN_EP_NUM,(uint8_t*)&USBGenericInPacket,USBGEN_EP_SIZE);
-            while (USBHandleBusy(USBGenericInHandle));
+            USB_Generic_Flush();
             break;
          }
 
-         case 0xA1 :    /** Reset FPGA */
+         case CMD_FPGA_RESET:             // Reset FPGA
          {
             FPGA_Reset();
             break;
          }
 
-         case 0xA2 :    /** Configure FPGA (Bytes 1-63) */
+         case CMD_FPGA_WRITE_BITSTREAM:   // Configure FPGA (Bytes 1-63)
          {
             FPGA_Write_Bitstream(&USBGenericOutPacket[1], 63);
             break;
          }
+
+         case CMD_RTC_WRITE:
+         {
+            RTC_Write(USBGenericOutPacket[1], (uint8_t*)&USBGenericOutPacket[3], USBGenericOutPacket[2]);
+            break;
+         }
+
+         case CMD_RTC_READ:
+         {
+            RTC_Read(USBGenericOutPacket[1], (uint8_t*)&USBGenericInPacket, USBGenericOutPacket[2]);
+            USB_Generic_Flush();
+            break;
+         }
+
       }
       UserLED1_Off;
       USBGenericOutHandle = USBGenRead(USBGEN_EP_NUM,(uint8_t*)&USBGenericOutPacket,USBGEN_EP_SIZE); // Refresh USB
    }
+}
+
+void USB_Generic_Flush(void)
+{
+   USBGenericInHandle = USBGenWrite(USBGEN_EP_NUM, (uint8_t*)&USBGenericInPacket, USBGEN_EP_SIZE);
+   while (USBHandleBusy(USBGenericInHandle));
 }

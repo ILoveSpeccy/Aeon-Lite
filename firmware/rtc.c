@@ -17,17 +17,44 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _USB_HANDLER_H_
-#define _USB_HANDLER_H_
+#include "hardware.h"
+#include "rtc.h"
 
-#define CMD_RTC_READ                      0x10
-#define CMD_RTC_WRITE                     0x11
+unsigned char RTC_Write(unsigned char addr, unsigned char *buffer, unsigned char len)
+{
+   unsigned char i;
 
-#define CMD_FPGA_GET_STATUS               0xA0
-#define CMD_FPGA_RESET                    0xA1
-#define CMD_FPGA_WRITE_BITSTREAM          0xA2
+   I2C_Start();
 
-void USB_Init(void);
-void USB_Handler(void);
+   I2C_WriteByte(RTC_ADDRESS | I2C_WRITE);
+   I2C_WriteByte(addr);
 
-#endif // _USB_HANDLER_H_
+   for(i=0;i<len;i++)
+      I2C_WriteByte(*buffer++);
+
+   I2C_Stop();
+
+   return 0;
+}
+
+unsigned char RTC_Read(unsigned char addr, unsigned char *buffer, unsigned char len)
+{
+   unsigned char i;
+
+   I2C_Start();
+
+   I2C_WriteByte(RTC_ADDRESS | I2C_WRITE);
+   I2C_WriteByte(addr);
+   I2C_RepeatStart();
+   I2C_WriteByte(RTC_ADDRESS | I2C_READ);
+
+   if (len>1)
+      for(i=0;i<(len-1);i++)
+         *buffer++ = I2C_ReadByte(1);
+
+   *buffer++ = I2C_ReadByte(0);
+
+   I2C_Stop();
+
+   return 0;
+}

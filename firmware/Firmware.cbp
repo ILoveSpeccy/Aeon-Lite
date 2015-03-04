@@ -29,10 +29,19 @@
 			<Add option="-Wl,--report-mem,--heap=512,--data-init" />
 			<Add option="-Tld/hid_boot_p$(chip).gld" />
 		</Linker>
+		<Unit filename="beep.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="beep.h" />
+		<Unit filename="bits.h" />
 		<Unit filename="dataflash.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="dataflash.h" />
+		<Unit filename="eeprom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="eeprom.h" />
 		<Unit filename="fat/diskio.h" />
 		<Unit filename="fat/ff.c">
 			<Option compilerVar="CC" />
@@ -51,6 +60,11 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="hardware.h" />
+		<Unit filename="hardware.txt" />
+		<Unit filename="iniparser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="iniparser.h" />
 		<Unit filename="ld/hid_boot_p24FJ128GB106.gld" />
 		<Unit filename="ld/hid_boot_p24FJ128GB206.gld" />
 		<Unit filename="ld/hid_boot_p24FJ192GB106.gld" />
@@ -59,6 +73,14 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h" />
+		<Unit filename="rtc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rtc.h" />
 		<Unit filename="timer.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -74,6 +96,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="usb/usb_device.h" />
+		<Unit filename="usb/usb_device_cdc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device_cdc.h" />
 		<Unit filename="usb/usb_device_generic.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -85,6 +111,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="usb_handler.h" />
+		<Unit filename="video.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="video.h" />
+		<Unit filename="wd1793.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="wd1793.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

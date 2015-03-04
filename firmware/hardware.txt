@@ -1,0 +1,70 @@
+PIC24FJ256GB206 I/O Configuration
+=================================
+
+Pin   Port  PPS   Dir   FPGA Pin    Description    Altern.
+-------------------------------------------------------------
+1     RE5         <--               Power Button
+2     RE6         -->               I2C SCL3 EEPROM/RTC
+3     RE7         <->               I2C SDA3 EEPROM/RTC
+4     RG6   RP21  -->               SPI MOSI SD/FL
+5     RG7   RP26  -->               SPI SCK  SD/FL
+6     RG8   RP19  -->               SPI MISO SD/FL
+7     *                             MCLR/µC Reset
+8     RG9         -->               Power LED
+9     *                             GND
+10    *                             VCC
+11    *                             ICSP PGEC
+12    *                             ICSP PGED
+13    RB3                           GPIO1
+14    RB2   RP13                    GPIO2
+15    RB1   RP1                     GPIO3
+16    RB0   RP0                     GPIO4
+17    RB6   RP6                     GPIO5
+18    RB7   RP7                     GPIO6
+19    *                             AVCC
+20    *                             AGND
+21    RB8   RP8                     GPIO7
+22    RB9   RP9                     GPIO8
+23    RB10                          GPIO9
+24    RB11                          GPIO10
+25    *                             GND
+26    *                             VCC
+27    RB12                          GPIO11
+28    RB13                          GPIO12
+29    RB14  RP14                    GPIO13
+30    RB15  RP29                    GPIO14
+31    RF4   RP10                    GPIO15
+32    RF5   RP17                    GPIO16
+33    RF3   RP16  -->               Buzzer
+34    *                             USB VBUS
+35    *                             VUSB
+36    *                             USB D-
+37    *                             USB D+
+38    *                             VCC
+39    *                             OSCI
+40    *                             OSCO
+41    *                             GND
+42    RD8   RP2   <--   71          CONF_DONE      !!! dedicated
+43    RD9   RP4   -->   70          CCLK           COMM_SPI SCK
+44    RD10  RP3   -->   69          M0             COMM_SPI CSA
+45    RD11  RP12  -->   65          DIN            COMM_SPI MOSI
+46    RD0   RP11  -->   60          M1             COMM_SPI CSD
+47    RC13              51          COMM1
+48    RC14  RPI37 <--   50          COMM2          COMM_SPI MISO
+49    RD1   RP24        48          COMM3
+50    RD2   RP23        47          COMM4
+51    RD3   RP22        46          COMM5
+52    RD4   RP25        45          COMM6
+53    RD5   RP20  <--   39          INIT_B         COMM REQ/ACK
+54    RD6         -->   37          PROG_B         !!! dedicated
+55    RD7         -->               UserLED1
+56    *                             VCAP
+57    *                             ENVREG
+58    RF0         -->               UserLED2
+59    RF1         -->               UserLED3
+60    RE0         <--               SD_WP
+61    RE1         <--               SD_CD
+62    RE2         -->               FL_CS
+63    RE3         -->               SD_CS
+64    RE4         -->               SPI MUX
+-------------------------------------------------------------

@@ -17,17 +17,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _USB_HANDLER_H_
-#define _USB_HANDLER_H_
+#include "hardware.h"
+#include <libpic30.h>
 
-#define CMD_RTC_READ                      0x10
-#define CMD_RTC_WRITE                     0x11
-
-#define CMD_FPGA_GET_STATUS               0xA0
-#define CMD_FPGA_RESET                    0xA1
-#define CMD_FPGA_WRITE_BITSTREAM          0xA2
-
-void USB_Init(void);
-void USB_Handler(void);
-
-#endif // _USB_HANDLER_H_
+void Beep(void)
+{
+    OC1CON1 = 0;                    /// Clear OCxCON1 register
+    OC1CON2 = 0;                    /// Clear OCxCON2 register
+    OC1CON1bits.OCTSEL = 0b111;     /// Select peripheral clock (Fcy)
+    OC1CON2bits.SYNCSEL = 0b11111;  /// Trigger/sync. source by this OCx module
+    OC1R = 0;                       /// Set duty cycle
+    OC1RS = 0xFF;                   /// Set period (OC1TMR counted up to 0xFF)
+    OC1CON1bits.OCM = 0b110;        /// Edge-aligned PWM mode
+    int i;
+    for(i=1023;i>0;i--)
+    {
+        OC1R = i>>2;
+        __delay_us(200);
+        OC1R = 0;
+        __delay_us(200);
+    }
+}

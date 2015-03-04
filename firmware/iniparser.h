@@ -17,17 +17,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _USB_HANDLER_H_
-#define _USB_HANDLER_H_
+#ifndef _INIPARSER_H_
+#define _INIPARSER_H_
 
-#define CMD_RTC_READ                      0x10
-#define CMD_RTC_WRITE                     0x11
+#define INI_BUFFER_SIZE 64
 
-#define CMD_FPGA_GET_STATUS               0xA0
-#define CMD_FPGA_RESET                    0xA1
-#define CMD_FPGA_WRITE_BITSTREAM          0xA2
+unsigned char iniBrowseSections(char* filename, unsigned char index, char* section);
+unsigned char iniBrowseKeys(char* filename, char* section, unsigned char index, char* key, char* value);
+unsigned char iniGetKey(char* filename, char* section, char* key, char* value);
+unsigned char iniResolveROM(char* source, char* filename, unsigned long* address, unsigned char* offset);
+unsigned char iniResolveRAM(char* source, unsigned long* address, unsigned long* length, unsigned char* value, unsigned char* offset);
+unsigned char iniBool(char* source);
+unsigned char iniCompare(char* value1, char* value2);
+unsigned long iniLong(char* source);
 
-void USB_Init(void);
-void USB_Handler(void);
-
-#endif // _USB_HANDLER_H_
+#endif
