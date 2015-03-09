@@ -130,8 +130,8 @@ unsigned char iniBrowseSections(char* filename, unsigned char index, char* secti
                     }
             }
         }
+       f_close(&inifile);
     }
-    f_close(&inifile);
     return result;
 }
 
@@ -171,8 +171,8 @@ unsigned char iniBrowseKeys(char* filename, char* section, unsigned char index, 
                     }
             }
         }
-    }
     f_close(&inifile);
+    }
     return result;
 }
 

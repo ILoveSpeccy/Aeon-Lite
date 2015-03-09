@@ -17,28 +17,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <stdio.h>
-#include "hardware.h"
+#include "hal.h"
 #include "timer.h"
 #include "usb_handler.h"
-#include "fpga.h"
+#include <libpic30.h>
+#include "startup.h"
 
 int main(void)
 {
+   __delay_ms(200);     // startup delay, need for USB
+
    USB_Init();
-   InitController();
-   InitTimer();
+   Controller_Init();
+   Timer_Init();
 
-//   FPGA_Reset();
-//   while(!PowerButton);
-
-   PowerLED_On;
-
-   printf("Aeon Lite booting...\n");
-
-   SPI_Mux_PIC24;
-   FPGA_Configure_from_File("firmware.bin");
-   SPI_Mux_FPGA;
+   Startup();           // выбор прошивки для первоначальной загрузки FPGA / сервисная прошивка
 
    while(1)
       USB_Handler();

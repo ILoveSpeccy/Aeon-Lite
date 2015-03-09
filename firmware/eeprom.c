@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "hardware.h"
+#include "hal.h"
 #include "eeprom.h"
 
 unsigned char EEPROM_Write(unsigned char chip, unsigned short addr, unsigned char *buffer, unsigned char len)

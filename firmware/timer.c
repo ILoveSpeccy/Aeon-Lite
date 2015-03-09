@@ -19,7 +19,7 @@
 
 #include "timer.h"
 #include "fat/diskio.h"
-#include "hardware.h"
+#include "hal.h"
 
 // Timer 1 Interrupt 1000Hz
 /////////////////////////////////////////////////////////////
@@ -33,7 +33,7 @@ void __attribute__((interrupt, auto_psv)) _T1Interrupt (void)
 // Timer 1 1000Hz Init
 /////////////////////////////////////////////////////////////
 
-void InitTimer(void)
+void Timer_Init(void)
 {
    PR1 = FCY / 256 / 1000; // 1000Hz
    _TCKPS0 = 1;	         // Select prescaler Fcy/256

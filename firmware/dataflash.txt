@@ -1,0 +1,6 @@
+Part                             Manufacturer ID      Device ID Byte 0     Device ID Byte 1     EDI Length           EDI Byte 1
+================================================================================================================================
+Adesto AT45DB161E 16Mbit         0x1F                 0x26                 0x00                 0x01                 0x00
+Atmel  AT45DB161D 16Mbit         0x1F                 0x26                 0x00                 0x01                 0x00
+Adesto AT45DB321E 32Mbit         0x1F                 0x27                 0x01                 0x01                 0x00
+Atmel  AT45DB321D 32Mbit         0x1F                 0x27                 0x01                 0x01                 0x00

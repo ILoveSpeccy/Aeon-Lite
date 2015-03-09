@@ -18,7 +18,7 @@
  */
 
 #include "dataflash.h"
-#include "hardware.h"
+#include "hal.h"
 
 void DataFlash_Init(void)
 {
@@ -65,6 +65,19 @@ unsigned char DataFlash_ReadByte(unsigned long address)
    return data;
 }
 
+void DataFlash_ReadBlock(unsigned long address, unsigned char *buffer, unsigned short length)
+{
+   unsigned short i;
+   DataFlash_Select();
+   DataFlash_SPI_Write(0x03);
+   DataFlash_SPI_Write((address >> 16) & 0x1F);
+   DataFlash_SPI_Write((address >> 8)  & 0xFF);
+   DataFlash_SPI_Write( address        & 0xFF);
+   for(i = 0 ; i < length ; i++)
+      *buffer++ = DataFlash_SPI_Read();
+   DataFlash_Deselect();
+}
+
 void DataFlash_ReadPage(unsigned long address, unsigned char *buffer)
 {
    unsigned short i;
@@ -78,7 +91,7 @@ void DataFlash_ReadPage(unsigned long address, unsigned char *buffer)
    DataFlash_Deselect();
 }
 
-void DataFlash_WritePage(unsigned long address, unsigned char *buffer)
+void DataFlash_WritePage(unsigned long page, unsigned char *buffer)
 {
    unsigned short i;
 
@@ -95,8 +108,33 @@ void DataFlash_WritePage(unsigned long address, unsigned char *buffer)
    // Flush
    DataFlash_Select();
    DataFlash_SPI_Write(0x83);
-   DataFlash_SPI_Write((address >> 7) & 0x1F);
-   DataFlash_SPI_Write(address << 1);
+   DataFlash_SPI_Write((page >> 7) & 0x1F);
+   DataFlash_SPI_Write(page << 1);
+   DataFlash_SPI_Write(0x00);
+   DataFlash_Deselect();
+   while(DataFlash_Busy);
+}
+
+void DataFlash_FillBuffer(unsigned short address, unsigned char *buffer, unsigned short length)
+{
+   unsigned short i;
+
+   DataFlash_Select();
+   DataFlash_SPI_Write(0x84);
+   DataFlash_SPI_Write(0x00);
+   DataFlash_SPI_Write(address >> 8);
+   DataFlash_SPI_Write(address & 0xFF);
+   for(i = 0 ; i < length ; i++)
+      DataFlash_SPI_Write(*buffer++);
+   DataFlash_Deselect();
+}
+
+void DataFlash_FlushBuffer(unsigned long page)
+{
+   DataFlash_Select();
+   DataFlash_SPI_Write(0x83);
+   DataFlash_SPI_Write((page >> 7) & 0x1F);
+   DataFlash_SPI_Write(page << 1);
    DataFlash_SPI_Write(0x00);
    DataFlash_Deselect();
    while(DataFlash_Busy);

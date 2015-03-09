@@ -17,26 +17,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "hal.h"
-#include <libpic30.h>
+// Индикация ошибок загрузки
 
-void Beep(void)
-{
-   int i;
+#ifndef _ERROR_H_
+#define _ERROR_H_
 
-   OC1CON1 = 0;                     // Clear OCxCON1 register
-   OC1CON2 = 0;                     // Clear OCxCON2 register
-   OC1CON1bits.OCTSEL = 0b111;      // Select peripheral clock (Fcy)
-   OC1CON2bits.SYNCSEL = 0b11111;   // Trigger/sync. source by this OCx module
-   OC1R = 0;                        // Set duty cycle
-   OC1RS = 0xFF;                    // Set period (OC1TMR counted up to 0xFF)
-   OC1CON1bits.OCM = 0b110;         // Edge-aligned PWM mode
 
-   for(i=1023;i>0;i--)
-   {
-      OC1R = i>>2;
-      __delay_us(200);
-      OC1R = 0;
-      __delay_us(200);
-   }
-}
+
+#endif // _ERROR_H_

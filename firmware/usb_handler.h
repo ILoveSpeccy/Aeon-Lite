@@ -22,6 +22,9 @@
 
 #define CMD_RTC_READ                      0x10
 #define CMD_RTC_WRITE                     0x11
+#define CMD_DATAFLASH_FILL_BUFFER         0x12
+#define CMD_DATAFLASH_FLUSH_BUFFER        0x13
+#define CMD_DATAFLASH_READ                0x14
 
 #define CMD_FPGA_GET_STATUS               0xA0
 #define CMD_FPGA_RESET                    0xA1

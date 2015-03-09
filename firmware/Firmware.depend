@@ -306,13 +306,13 @@
 
 1424880237 d:\aeonlite\firmware\usb_handler.h
 
-1424880191 source:d:\projects\aeonlite\firmware\dataflash.c
+1425719024 source:d:\projects\aeonlite\firmware\dataflash.c
 	"dataflash.h"
-	"hardware.h"
+	"hal.h"
 
-1424880260 d:\projects\aeonlite\firmware\dataflash.h
+1425719049 d:\projects\aeonlite\firmware\dataflash.h
 
-1424880247 d:\projects\aeonlite\firmware\hardware.h
+1425560670 d:\projects\aeonlite\firmware\hardware.h
 	<P24FJ128GB106.h>
 	<P24FJ256GB106.h>
 	<P24FJ128GB206.h>
@@ -336,13 +336,13 @@
 1424670322 d:\projects\aeonlite\firmware\fat\diskio.h
 	"integer.h"
 
-1424670322 source:d:\projects\aeonlite\firmware\fat\mmc.c
+1425588298 source:d:\projects\aeonlite\firmware\fat\mmc.c
 	"diskio.h"
-	"../hardware.h"
+	"../hal.h"
 
-1424880188 source:d:\projects\aeonlite\firmware\fpga.c
+1425757222 source:d:\projects\aeonlite\firmware\fpga.c
 	<string.h>
-	"hardware.h"
+	"hal.h"
 	"fat/ff.h"
 	"fpga.h"
 	"dataflash.h"
@@ -355,29 +355,29 @@
 	<i2c.h>
 	"hardware.h"
 
-1424883819 source:d:\projects\aeonlite\firmware\main.c
-	<stdio.h>
-	"hardware.h"
+1425915617 source:d:\projects\aeonlite\firmware\main.c
+	"hal.h"
 	"timer.h"
 	"usb_handler.h"
-	"fpga.h"
+	<libpic30.h>
+	"startup.h"
 
-1424880241 d:\projects\aeonlite\firmware\timer.h
+1425625201 d:\projects\aeonlite\firmware\timer.h
 
-1425457700 d:\projects\aeonlite\firmware\usb_handler.h
+1425766626 d:\projects\aeonlite\firmware\usb_handler.h
 
-1424880203 source:d:\projects\aeonlite\firmware\timer.c
+1425625211 source:d:\projects\aeonlite\firmware\timer.c
 	"timer.h"
 	"fat/diskio.h"
-	"hardware.h"
+	"hal.h"
 
 1425241568 source:d:\projects\aeonlite\firmware\usb\usb_descriptors.c
 	<usb/usb.h>
 	<usb/usb_device_generic.h>
 	<usb/usb_device_cdc.h>
 
-1424866459 d:\projects\aeonlite\firmware\usb\usb.h
-	"hardware.h"
+1425563073 d:\projects\aeonlite\firmware\usb\usb.h
+	"hal.h"
 	"usb_config.h"
 	<usb/usb_common.h>
 	<usb/usb_ch9.h>
@@ -389,11 +389,11 @@
 1424877988 d:\projects\aeonlite\firmware\usb\usb_config.h
 	<stdint.h>
 
-1424866470 d:\projects\aeonlite\firmware\usb\usb_common.h
+1425563077 d:\projects\aeonlite\firmware\usb\usb_common.h
 	<limits.h>
 	<stdbool.h>
 	<stdint.h>
-	"hardware.h"
+	"hal.h"
 	"usb_config.h"
 
 1407196208 d:\projects\aeonlite\firmware\usb\usb_ch9.h
@@ -413,8 +413,8 @@
 	<usb/usb_hal_pic24f.h>
 	"usb/usb_hal_pic32.h"
 
-1424866473 d:\projects\aeonlite\firmware\usb\usb_hal_pic24f.h
-	"hardware.h"
+1425563082 d:\projects\aeonlite\firmware\usb\usb_hal_pic24f.h
+	"hal.h"
 	"usb_config.h"
 	<stdint.h>
 	<string.h>
@@ -428,10 +428,10 @@
 	<usb/usb.h>
 	"usb_config.h"
 
-1424866477 source:d:\projects\aeonlite\firmware\usb\usb_device.c
+1425563087 source:d:\projects\aeonlite\firmware\usb\usb_device.c
 	<stdint.h>
 	<stddef.h>
-	"hardware.h"
+	"hal.h"
 	"usb_config.h"
 	<usb/usb.h>
 	<usb/usb_ch9.h>
@@ -442,12 +442,107 @@
 1424866277 d:\projects\aeonlite\firmware\usb\usb_device_local.h
 	"usb_config.h"
 
-1424875302 source:d:\projects\aeonlite\firmware\usb\usb_device_cdc.c
-	<hardware.h>
+1425563092 source:d:\projects\aeonlite\firmware\usb\usb_device_cdc.c
+	<hal.h>
 	<usb/usb.h>
 	<usb/usb_device_cdc.h>
 
 1407196208 source:d:\projects\aeonlite\firmware\usb\usb_device_generic.c
 	"usb/usb.h"
 	"./usb/usb_device_generic.h"
+
+1425586685 source:d:\projects\aeonlite\firmware\beep.c
+	"hal.h"
+	<libpic30.h>
+
+1425563027 source:d:\projects\aeonlite\firmware\eeprom.c
+	"hal.h"
+	"eeprom.h"
+
+1425472399 d:\projects\aeonlite\firmware\eeprom.h
+
+1425765380 source:d:\projects\aeonlite\firmware\iniparser.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<stdlib.h>
+	"iniparser.h"
+	"fat/ff.h"
+
+1425765362 d:\projects\aeonlite\firmware\iniparser.h
+
+1425766823 source:d:\projects\aeonlite\firmware\menu.c
+	<string.h>
+	<stdio.h>
+	"menu.h"
+	"video.h"
+	"hal.h"
+	"iniparser.h"
+	"usb_handler.h"
+
+1425472491 d:\projects\aeonlite\firmware\menu.h
+
+1425472290 d:\projects\aeonlite\firmware\video.h
+
+1425563063 source:d:\projects\aeonlite\firmware\rtc.c
+	"hal.h"
+	"rtc.h"
+
+1425457106 d:\projects\aeonlite\firmware\rtc.h
+
+1425589024 source:d:\projects\aeonlite\firmware\video.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	"video.h"
+	"hal.h"
+
+1425563836 source:d:\projects\aeonlite\firmware\wd1793.c
+	<stdio.h>
+	<stdlib.h>
+	"wd1793.h"
+	"bits.h"
+	"fat/ff.h"
+
+1425472531 d:\projects\aeonlite\firmware\wd1793.h
+
+1311532020 d:\projects\aeonlite\firmware\bits.h
+
+1425589474 d:\projects\aeonlite\firmware\hal.h
+	<P24FJ128GB106.h>
+	<P24FJ192GB106.h>
+	<P24FJ256GB106.h>
+	<P24FJ128GB206.h>
+	<P24FJ256GB206.h>
+
+1425589900 source:d:\projects\aeonlite\firmware\hal.c
+	<pps.h>
+	<uart.h>
+	<i2c.h>
+	"hal.h"
+
+1425766585 source:d:\projects\aeonlite\firmware\usb_handler.c
+	<usb/usb.h>
+	<usb/usb_device.h>
+	<usb/usb_device_cdc.h>
+	<usb/usb_device_generic.h>
+	"dataflash.h"
+	"usb_handler.h"
+	"fpga.h"
+	"rtc.h"
+
+1425915602 source:d:\projects\aeonlite\firmware\startup.c
+	<stdio.h>
+	<string.h>
+	"hal.h"
+	"startup.h"
+	"fpga.h"
+	"video.h"
+	"fat/ff.h"
+	"menu.h"
+	"iniparser.h"
+
+1425915631 d:\projects\aeonlite\firmware\startup.h
+
+1425879709 source:d:\projects\aeonlite\firmware\error.c
 

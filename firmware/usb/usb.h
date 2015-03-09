@@ -53,7 +53,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 
-#include "hardware.h"
+#include "hal.h"
 #include "usb_config.h"          // Must be defined by the application
 
 #include <usb/usb_common.h>         // Common USB library definitions

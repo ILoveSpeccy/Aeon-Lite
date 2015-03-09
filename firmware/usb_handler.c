@@ -21,6 +21,7 @@
 #include <usb/usb_device.h>
 #include <usb/usb_device_cdc.h>
 #include <usb/usb_device_generic.h>
+#include "dataflash.h"
 #include "usb_handler.h"
 #include "fpga.h"
 #include "rtc.h"
@@ -123,6 +124,52 @@ void USB_Generic_Handler(void)
             break;
          }
 
+         // ==================================================================================================================
+         // TEST
+         case 30:
+         {
+            Flash_Select;
+            break;
+         }
+
+         case 31:
+         {
+            Flash_Deselect;
+            break;
+         }
+
+         case 32:
+         {
+            USBGenericInPacket[0] = SPI1_Transfer(USBGenericOutPacket[1]);
+            USB_Generic_Flush();
+            break;
+         }
+
+/*         case 33: // read 32 bytes from dataflash
+         {
+            unsigned long address = ((unsigned long)USBGenericOutPacket[1] << 16) |
+                                    ((unsigned long)USBGenericOutPacket[2] << 8)  |
+                                                    USBGenericOutPacket[3];
+            DataFlash_ReadBlock(address, USBGenericInPacket, 32);
+            USB_Generic_Flush();
+            break;
+         }
+*/
+         case CMD_DATAFLASH_FILL_BUFFER:
+         {
+            unsigned short pos = (((unsigned short)USBGenericOutPacket[1] << 8) | USBGenericOutPacket[2]) & 0x1FF;
+            DataFlash_FillBuffer(pos, &USBGenericOutPacket[3], 32);
+            break;
+         }
+
+         case CMD_DATAFLASH_FLUSH_BUFFER:
+         {
+            unsigned short page = ((unsigned short)USBGenericOutPacket[1] << 8) | USBGenericOutPacket[2];
+            DataFlash_FlushBuffer(page);
+            break;
+         }
+         // END TEST
+         // ==================================================================================================================
       }
       UserLED1_Off;
       USBGenericOutHandle = USBGenRead(USBGEN_EP_NUM,(uint8_t*)&USBGenericOutPacket,USBGEN_EP_SIZE); // Refresh USB

@@ -50,7 +50,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stdint.h>
 #include <stddef.h>
 
-#include "hardware.h"
+#include "hal.h"
 #include "usb_config.h"
 
 #include <usb/usb.h>

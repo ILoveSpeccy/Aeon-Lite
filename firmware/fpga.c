@@ -30,7 +30,7 @@
 /// 670 Pages (of 8192 Pages Total) in DataFlash AT45DB321E
 
 #include <string.h>
-#include "hardware.h"
+#include "hal.h"
 #include "fat/ff.h"
 #include "fpga.h"
 #include "dataflash.h"
@@ -40,11 +40,11 @@ unsigned char Buffer[512];
 unsigned char FPGA_Configure_from_DataFlash(unsigned char slot)
 {
     unsigned short i;
-    SetupSPI1(0b11011); // 8MHz
+    SPI1_Setup(SPI_Speed_8MHz);
     FPGA_Reset();
     for(i=0;i<670;i++)
     {
-///        DataFlash_ReadPage(i, Buffer);
+        DataFlash_ReadPage(i, Buffer);
         FPGA_Write_Bitstream(Buffer, sizeof(Buffer));
     }
 
@@ -93,7 +93,7 @@ void FPGA_Write_Bitstream(unsigned char *buffer, unsigned short length)
 {
     unsigned short i;
     for(i=0;i<length;i++)
-        TransferSPI2(buffer[i]);
+        SPI2_Transfer(buffer[i]);
 }
 
 void FPGA_Reset(void)

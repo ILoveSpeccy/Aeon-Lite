@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "hardware.h"
+#include "hal.h"
 #include "rtc.h"
 
 unsigned char RTC_Write(unsigned char addr, unsigned char *buffer, unsigned char len)

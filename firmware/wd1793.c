@@ -204,7 +204,6 @@ void WD1793_Execute(void)
                case 0x90: // Read Sector
   //                printf("RD SEC %i, TRK %i, SIDE %i - %ld\n", WD1793.SectorRegister, WD1793.TrackRegister, SIDE, DiskPosition(WD1793.SectorRegister - 1, WD1793.TrackRegister, SIDE?1:0) );
                   f_lseek(&fsrcc,DiskPosition(WD1793.SectorRegister - 1, WD1793.TrackRegister, SIDE?1UL:0UL));
-                  //res = f_read(&fsrcc, buf, 1024, &br);
                   CurrentByte = 0;
                   Delay = 3;
                   NextState = stREADINGSECTOR;
@@ -251,15 +250,9 @@ void WD1793_Execute(void)
                break;
             }
 
-//            if (!(CurrentByte & 0xFF))
-//            {
-//               pf_read(&TrackData, 1, &br);
-//            }
-
             res = f_read(&fsrcc, &buf, 1, &br);
             WD1793.DataRegister = buf;
             CurrentByte++;
-//            WD1793.DataRegister = TrackData[CurrentByte++&0xFF];
             WD1793.DRQ = 1;
             set_bit(WD1793.StatusRegister, stsDRQ);
             Delay = 3;

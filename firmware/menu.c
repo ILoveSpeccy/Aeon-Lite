@@ -21,13 +21,14 @@
 #include <stdio.h>
 #include "menu.h"
 #include "video.h"
-#include "hardware.h"
+#include "hal.h"
 #include "iniparser.h"
+#include "usb_handler.h"
 
 unsigned char KeyboardRead(void)
 {
-    Comm_transfer_addr(RG_READ | 0x20);
-    return Comm_transfer_data(0xFF);
+    comm_transfer_addr(RG_READ | 0x20);
+    return comm_transfer_data(0xFF);
 }
 
 void GetAllConfigs(CONFIG *conf)
@@ -80,6 +81,7 @@ void MainMenu(CONFIG* config, unsigned char attr, unsigned char selattr)
 
     while(1)
     {
+       USB_Handler();
         key = KeyboardRead();
 
         if (key & 0b00000010) // Enter

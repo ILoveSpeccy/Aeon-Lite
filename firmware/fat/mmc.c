@@ -12,19 +12,16 @@
 /-------------------------------------------------------------------------*/
 
 #include "diskio.h"
-#include "../hardware.h"
+#include "../hal.h"
 
 /* Port Controls  (Platform dependent) */
-#define CS_LOW()  SDCard_Select	    /* MMC CS = L */
-#define CS_HIGH() SDCard_Deselect   /* MMC CS = H */
-///#define INS	!(PORTB & (1<<11))	/* Card detected   (yes:true, no:false, default:true) */
-///#define WP	(PORTB & (1<<10))	/* Write protected (yes:true, no:false, default:false) */
-//#define INS	(1)
-#define INS	SDCardDetect
-#define WP	(0)
+#define CS_LOW()     SDCard_Select	                  // MMC CS = L
+#define CS_HIGH()    SDCard_Deselect                  // MMC CS = H
+#define INS	         SDCard_Detect                    // Card detected   (yes:true, no:false, default:true)
+#define WP	         SDCard_WriteProtect              // Write protected (yes:true, no:false, default:false)
 
-#define	FCLK_SLOW()    (SetupSPI1(0b11100))		/* Set slow clock (100k-400k) */
-#define	FCLK_FAST()    (SetupSPI1(0b11011))			/* Set fast clock (depends on the CSD) */
+#define FCLK_SLOW()  (SPI1_Setup(SPI_Speed_250KHz))   // Set slow clock (100k-400k)
+#define FCLK_FAST()  (SPI1_Setup(SPI_Speed_8MHz))     // Set fast clock (depends on the CSD)
 
 /*--------------------------------------------------------------------------
 
@@ -52,7 +49,6 @@
 #define CMD55  (55)			/* APP_CMD */
 #define CMD58  (58)			/* READ_OCR */
 
-
 static volatile
 DSTATUS Stat = STA_NOINIT;	/* Disk status */
 
@@ -62,12 +58,10 @@ UINT Timer1, Timer2;		/* 1000Hz decrement timer */
 static
 UINT CardType;
 
-///
 DWORD get_fattime (void)
 {
    return 0;
 }
-///
 
 /*-----------------------------------------------------------------------*/
 /* Power Control  (Platform dependent)                                   */
@@ -78,17 +72,12 @@ DWORD get_fattime (void)
 static
 void power_on (void)
 {
-//   InitSPI1();
 }
 
 static
 void power_off (void)
 {
-//	_SPIEN = 0;			/* Disable SPI1 */
-
-	;					/* Turn off socket power (Nothing to do) */
-
-	Stat |= STA_NOINIT;	/* Force uninitialized */
+   Stat |= STA_NOINIT;	/* Force uninitialized */
 }
 
 
@@ -99,12 +88,12 @@ void power_off (void)
 static
 BYTE xchg_spi (BYTE dat)
 {
-	return (BYTE)TransferSPI1(dat);
+	return (BYTE)SPI1_Transfer(dat);
 }
 
 /* Alternative macro to transfer data fast */
-#define XMIT_SPI_MULTI(src,cnt)  {UINT c=cnt/2; const BYTE *p=src; do {TransferSPI1(*p++);TransferSPI1(*p++);} while(--c);}
-#define RCVR_SPI_MULTI(dst,cnt)	{UINT c=cnt/2; BYTE *p=dst; do {*p++=TransferSPI1(0xFF); *p++=TransferSPI1(0xFF); } while(--c);}
+#define XMIT_SPI_MULTI(src,cnt)  {UINT c=cnt/2; const BYTE *p=src; do {SPI1_Transfer(*p++);SPI1_Transfer(*p++);} while(--c);}
+#define RCVR_SPI_MULTI(dst,cnt)	{UINT c=cnt/2; BYTE *p=dst; do {*p++=SPI1_Transfer(0xFF); *p++=SPI1_Transfer(0xFF); } while(--c);}
 
 /*-----------------------------------------------------------------------*/
 /* Wait for card ready                                                   */

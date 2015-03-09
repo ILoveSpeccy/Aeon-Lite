@@ -49,7 +49,7 @@ Pin   Port  PPS   Dir   FPGA Pin    Description    Altern.
 44    RD10  RP3   -->   69          M0             COMM_SPI CSA
 45    RD11  RP12  -->   65          DIN            COMM_SPI MOSI
 46    RD0   RP11  -->   60          M1             COMM_SPI CSD
-47    RC13              51          COMM1
+47    RC13        -->   51          MCU READY      MCU is ready. FPGA configuration can run now!
 48    RC14  RPI37 <--   50          COMM2          COMM_SPI MISO
 49    RD1   RP24        48          COMM3
 50    RD2   RP23        47          COMM4

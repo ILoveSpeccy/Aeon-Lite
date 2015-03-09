@@ -21,24 +21,24 @@
 #include <stdarg.h>
 #include <string.h>
 #include "video.h"
-#include "hardware.h"
+#include "hal.h"
 
 const unsigned char Frame[8] = {153,157,139,138,140,157,152,138};
 
 void videoWriteBuffer (unsigned char addr, char* buffer, unsigned char cnt)
 {
     unsigned char i;
-    videoTransferAddr(RG_WRITE | addr);
+    comm_transfer_addr(RG_WRITE | addr);
     for(i=0;i<cnt;i++)
-        videoTransferData(*buffer++);
+        comm_transfer_data(*buffer++);
 }
 
 void videoReadBuffer (unsigned char addr, char* buffer, unsigned char cnt)
 {
     unsigned char i;
-    videoTransferAddr(RG_READ | addr);
+    comm_transfer_addr(RG_READ | addr);
     for(i=0;i<cnt;i++)
-        *buffer++ = videoTransferData(0x00);
+        *buffer++ = comm_transfer_data(0x00);
 }
 
 void videoSetCursor(unsigned char x, unsigned char y)

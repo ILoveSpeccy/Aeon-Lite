@@ -30,7 +30,7 @@ CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
 /****** include files ********************************************************/
 /*****************************************************************************/
 
-#include "hardware.h"
+#include "hal.h"
 #include "usb_config.h"
 
 #include <stdint.h>
