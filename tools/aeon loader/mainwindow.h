@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButtonConfigureFPGA_clicked();
 
+    void on_pushButtonWriteDataflash_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSettings *settings;

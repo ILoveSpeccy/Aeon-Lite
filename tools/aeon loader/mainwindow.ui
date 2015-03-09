@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Aeon Loader</string>
+   <string>Aeon Configuration Tool</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resource.qrc">
@@ -184,6 +184,13 @@
         </property>
         <property name="text">
          <string>Configure FPGA</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonWriteDataflash">
+        <property name="text">
+         <string>Write DataFlash</string>
         </property>
        </widget>
       </item>

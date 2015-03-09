@@ -51,8 +51,15 @@ void MainWindow::showFileInformation(QString fileName)
         ui->labelTime->setText(myBitFile.getTime());
         ui->labelBitstreamLength->setText(QString::number(myBitFile.getDataLength()));
     }
-    else
+    else {
+        ui->labelDesignName->setText("");
+        ui->labelPartName->setText("");
+        ui->labelDate->setText("");
+        ui->labelTime->setText("");
+        ui->labelBitstreamLength->setText("");
+
         statusBar()->showMessage("Error: bitstream file not exists or corrupt", 5000);
+    }
 }
 
 void MainWindow::on_pushButtonOpenFile_clicked()
@@ -168,3 +175,87 @@ void MainWindow::on_pushButtonConfigureFPGA_clicked()
         statusBar()->showMessage("Error: \"Aeon Lite\" is not found", 5000);
 }
 
+
+void MainWindow::on_pushButtonWriteDataflash_clicked()
+{
+    showFileInformation(ui->lineFileName->text());
+    if (myBitFile.getError())
+        return;
+
+    usb_dev_handle *dev = NULL;
+
+    char InputPacket[64];
+    char OutputPacket[64];
+
+    statusBar()->showMessage("Starting DataFlash Programming...");
+    ui->progressBar->setValue(0);
+
+    unsigned short res;
+    unsigned short page = 0;
+    unsigned short buff_pos = 0;
+    char buffer[512];
+
+    usb_init();
+    usb_find_busses();
+    usb_find_devices();
+
+    if ((dev = open_dev()))
+    {
+        if (!(usb_set_configuration(dev, MY_CONFIG)))
+        {
+            if (!usb_claim_interface(dev, MY_INTF))
+            {
+                QFile file(ui->lineFileName->text());
+
+                if (!file.open(QIODevice::ReadOnly))
+                {
+                    statusBar()->showMessage("Error opening file", 5000);
+                    return;
+                }
+
+                file.seek(myBitFile.getStartPos());
+
+                while((res = file.read(buffer, 512)))
+                {
+                    for(buff_pos = 0; buff_pos < 512; buff_pos += 32)
+                    {
+                       OutputPacket[0] = 0x12;
+                       OutputPacket[1] = (buff_pos >> 8) & 0x01;
+                       OutputPacket[2] = buff_pos & 0xFF;
+                       memcpy(&OutputPacket[3], &buffer[buff_pos], 32);
+
+                       if (usb_bulk_write(dev,  EP_OUT, OutputPacket, BUF_SIZE, 5000) != BUF_SIZE)
+                       {
+                          statusBar()->showMessage("Error USB Transmit", 5000);
+                          break;
+                       }
+                    }
+
+                    OutputPacket[0] = 0x13;
+                    OutputPacket[1] = (page >> 8) & 0x0F;
+                    OutputPacket[2] = page & 0xFF;
+                    if (usb_bulk_write(dev,  EP_OUT, OutputPacket, BUF_SIZE, 5000) != BUF_SIZE)
+                    {
+                       statusBar()->showMessage("Error USB Transmit", 5000);
+                       break;
+                    }
+
+                    ui->progressBar->setValue(page * 100 / (file.size() / 512));
+
+                    page++;
+                    memset(buffer, 0, sizeof(buffer));
+                }
+
+                ui->progressBar->setValue(100);
+                statusBar()->showMessage("DataFlash Programming is Done", 5000);
+            }
+            else
+                statusBar()->showMessage("Claiming interface error", 5000);
+        }
+        else
+            statusBar()->showMessage("Device configuration error", 5000);
+        usb_close(dev);
+    }
+    else
+        statusBar()->showMessage("Error: \"Aeon Lite\" is not found", 5000);
+}
