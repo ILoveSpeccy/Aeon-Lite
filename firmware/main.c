@@ -21,6 +21,7 @@
 #include "timer.h"
 #include "usb_handler.h"
 #include <libpic30.h>
+#include "fpga.h"
 #include "startup.h"
 
 int main(void)

@@ -13,7 +13,7 @@
 				<Option compiler="xc16" />
 			</Target>
 			<Environment>
-				<Variable name="chip" value="24FJ128GB106" />
+				<Variable name="chip" value="24FJ256GB206" />
 			</Environment>
 		</Build>
 		<Compiler>
@@ -29,6 +29,10 @@
 			<Add option="-Wl,--report-mem,--heap=512,--data-init" />
 			<Add option="-Tld/hid_boot_p$(chip).gld" />
 		</Linker>
+		<Unit filename="COPYING" />
+		<Unit filename="Firmware.cbp" />
+		<Unit filename="Firmware.depend" />
+		<Unit filename="Firmware.layout" />
 		<Unit filename="beep.c">
 			<Option compilerVar="CC" />
 		</Unit>

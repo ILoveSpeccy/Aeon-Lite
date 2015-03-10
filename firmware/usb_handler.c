@@ -145,7 +145,7 @@ void USB_Generic_Handler(void)
             break;
          }
 
-/*         case 33: // read 32 bytes from dataflash
+         case CMD_DATAFLASH_READ:
          {
             unsigned long address = ((unsigned long)USBGenericOutPacket[1] << 16) |
                                     ((unsigned long)USBGenericOutPacket[2] << 8)  |
@@ -154,7 +154,7 @@ void USB_Generic_Handler(void)
             USB_Generic_Flush();
             break;
          }
-*/
+
          case CMD_DATAFLASH_FILL_BUFFER:
          {
             unsigned short pos = (((unsigned short)USBGenericOutPacket[1] << 8) | USBGenericOutPacket[2]) & 0x1FF;
@@ -166,6 +166,12 @@ void USB_Generic_Handler(void)
          {
             unsigned short page = ((unsigned short)USBGenericOutPacket[1] << 8) | USBGenericOutPacket[2];
             DataFlash_FlushBuffer(page);
+            break;
+         }
+
+         case CMD_SET_SPIMASTER:
+         {
+            SPI_Mux = USBGenericOutPacket[1];
             break;
          }
          // END TEST

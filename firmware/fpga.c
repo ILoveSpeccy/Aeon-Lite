@@ -35,13 +35,14 @@
 #include "fpga.h"
 #include "dataflash.h"
 
-unsigned char Buffer[512];
+static unsigned char Buffer[512];
 
 unsigned char FPGA_Configure_from_DataFlash(unsigned char slot)
 {
     unsigned short i;
     SPI1_Setup(SPI_Speed_8MHz);
     FPGA_Reset();
+
     for(i=0;i<670;i++)
     {
         DataFlash_ReadPage(i, Buffer);

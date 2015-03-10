@@ -26,6 +26,7 @@
 #include "fat/ff.h"
 #include "menu.h"
 #include "iniparser.h"
+#include <libpic30.h>
 
 void Startup(void)
 {
@@ -35,6 +36,9 @@ void Startup(void)
 //   printf("Aeon Lite booting...\n");
 
    SPI_Mux_PIC24;
+
+   __delay_us(100);
+
    FPGA_Configure_from_DataFlash(0);         // Заливаем в FPGA сервисную прошивку из DataFlash (по-умолчанию из слота "0")
 
    // Рисуем рамку
@@ -97,6 +101,7 @@ void Startup(void)
    unsigned char value, mode;
    char filename[80];
 
+
    if (iniGetKey("config.ini", config.Name[config.CurrentItem], "ramclear", buffer))
    {
       iniResolveRAM(buffer, &addr, &length, &value, &mode);
@@ -115,21 +120,17 @@ void Startup(void)
 
    FPGA_Configure_from_File(buffer);
 
-   SPI_Mux_FPGA;
+   iniGetKey("config.ini", config.Name[config.CurrentItem], "spimaster", buffer);
+   if(strcmp(buffer,"fpga"))
+   {
+      printf("SPI Master is PIC24\n");
+      SPI_Mux_PIC24;
+   }
+   else
+   {
+      printf("SPI Master is FPGA\n");
+      SPI_Mux_FPGA;
+   }
 
    MCU_Ready;  // Загрузка окончена. Прошивка в FPGA может стартовать!
-
-/*
-    iniGetKey("config.ini", config.Name[config.CurrentItem], "spimaster", buffer);
-    if(strcmp(buffer,"fpga"))
-    {
-        printf("SPI Master is PIC24\n");
-        SPI_Mux_PIC24;
-    }
-    else
-    {
-        printf("SPI Master is FPGA\n");
-        SPI_Mux_FPGA;
-    }
-*/
 }

@@ -20,7 +20,7 @@
 #ifndef _INIPARSER_H_
 #define _INIPARSER_H_
 
-#define INI_BUFFER_SIZE 64
+#define INI_BUFFER_SIZE 80
 
 unsigned char iniBrowseSections(char* filename, unsigned char index, char* section);
 unsigned char iniBrowseKeys(char* filename, char* section, unsigned char index, char* key, char* value);
