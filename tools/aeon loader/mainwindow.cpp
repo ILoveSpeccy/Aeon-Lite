@@ -14,6 +14,20 @@
 
 #define BUF_SIZE    64
 
+#define CMD_RTC_READ                      0x10
+#define CMD_RTC_WRITE                     0x11
+#define CMD_DATAFLASH_FILL_BUFFER         0x12
+#define CMD_DATAFLASH_FLUSH_BUFFER        0x13
+#define CMD_DATAFLASH_READ                0x14
+#define CMD_SET_SPIMASTER                 0x15
+
+#define SPIMASTER_PIC24                   0
+#define SPIMASTER_FPGA                    1
+
+#define CMD_FPGA_GET_STATUS               0xA0
+#define CMD_FPGA_RESET                    0xA1
+#define CMD_FPGA_WRITE_BITSTREAM          0xA2
+
 bitfile myBitFile;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -111,13 +125,13 @@ void MainWindow::on_pushButtonConfigureFPGA_clicked()
         {
             if (!usb_claim_interface(dev, MY_INTF))
             {
-                OutputPacket[0] = 0xA1;
+                OutputPacket[0] = CMD_FPGA_RESET;
                 usb_bulk_write(dev,  EP_OUT, OutputPacket, BUF_SIZE, 5000);
 
                 res = 0;
                 for(a=0;a<15;a++)
                 {
-                   OutputPacket[0] = 0xA0;
+                   OutputPacket[0] = CMD_FPGA_GET_STATUS;
                    usb_bulk_write(dev,  EP_OUT, OutputPacket, BUF_SIZE, 5000);
                    usb_bulk_read(dev,  EP_IN, InputPacket, BUF_SIZE, 5000);
                    if (InputPacket[0] == 1)
@@ -137,7 +151,7 @@ void MainWindow::on_pushButtonConfigureFPGA_clicked()
                         return;
                     }
 
-                    OutputPacket[0] = 0xA2;
+                    OutputPacket[0] = CMD_FPGA_WRITE_BITSTREAM;
                     file.seek(myBitFile.getStartPos());
 
                     while((res = file.read(&OutputPacket[1], 63)))
@@ -153,7 +167,7 @@ void MainWindow::on_pushButtonConfigureFPGA_clicked()
                     }
 
                     ui->progressBar->setValue(100);
-                    OutputPacket[0] = 0xA0;
+                    OutputPacket[0] = CMD_FPGA_GET_STATUS;
                     usb_bulk_write(dev,  EP_OUT, OutputPacket, BUF_SIZE, 5000);
                     usb_bulk_read(dev,  EP_IN, InputPacket, BUF_SIZE, 5000);
                     if (InputPacket[1]==0)
@@ -213,13 +227,22 @@ void MainWindow::on_pushButtonWriteDataflash_clicked()
                     return;
                 }
 
+                OutputPacket[0] = CMD_SET_SPIMASTER;
+                OutputPacket[1] = SPIMASTER_PIC24;
+
+                if (usb_bulk_write(dev,  EP_OUT, OutputPacket, BUF_SIZE, 5000) != BUF_SIZE)
+                {
+                   statusBar()->showMessage("Error USB Transmit", 5000);
+                   return;
+                }
+
                 file.seek(myBitFile.getStartPos());
 
                 while((res = file.read(buffer, 512)))
                 {
                     for(buff_pos = 0; buff_pos < 512; buff_pos += 32)
                     {
-                       OutputPacket[0] = 0x12;
+                       OutputPacket[0] = CMD_DATAFLASH_FILL_BUFFER;
                        OutputPacket[1] = (buff_pos >> 8) & 0x01;
                        OutputPacket[2] = buff_pos & 0xFF;
                        memcpy(&OutputPacket[3], &buffer[buff_pos], 32);
@@ -231,7 +254,7 @@ void MainWindow::on_pushButtonWriteDataflash_clicked()
                        }
                     }
 
-                    OutputPacket[0] = 0x13;
+                    OutputPacket[0] = CMD_DATAFLASH_FLUSH_BUFFER;
                     OutputPacket[1] = (page >> 8) & 0x0F;
                     OutputPacket[2] = page & 0xFF;
                     if (usb_bulk_write(dev,  EP_OUT, OutputPacket, BUF_SIZE, 5000) != BUF_SIZE)
