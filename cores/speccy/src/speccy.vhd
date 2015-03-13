@@ -6,6 +6,8 @@ entity speccy is
 Port ( 
     CLK50               : in    std_logic;
 
+    MCU_READY           : in    std_logic;
+
     KEYB_CLK            : in    std_logic;
     KEYB_DATA           : in    std_logic;
     
@@ -256,7 +258,7 @@ CPU_RESET <= not RESET_ONESHOT;
 reset_and_clock : process(CLK)
 begin
     if rising_edge(CLK) then
-        if LOCKED = '0' then
+        if LOCKED = '0' or MCU_READY = '0' then
             TICK <= "0000";
             RESET <= '1';
             CPU_CLK <= '0';
@@ -376,7 +378,7 @@ begin
         end if;
     end if;
 end process;
- 
+
 SD_SCK <= counter(0);
 SD_MOSI <= shift_reg(8);
 

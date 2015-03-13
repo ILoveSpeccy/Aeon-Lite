@@ -1,6 +1,9 @@
 # 50NHz Clock
 NET "CLK50"       LOC = P123  |  IOSTANDARD = LVTTL;
 
+# Microcontroller is ready
+NET "MCU_READY"   LOC = P51   |  IOSTANDARD = LVTTL;
+ 
 # VGA
 NET "VGA_R[3]"    LOC = P83   |  IOSTANDARD = LVTTL;
 NET "VGA_R[2]"    LOC = P82   |  IOSTANDARD = LVTTL;
