@@ -22,7 +22,12 @@
 
 void DataFlash_Init(void)
 {
-   /// Buffer and Page Size Configuration for 512 Bytes
+   DataFlash_SoftReset();
+}
+
+void DataFlash_PowerOfTwo(void)
+{
+   /// Page Size Option "Power of Two" (512 Bytes)
    DataFlash_Select();
    DataFlash_SPI_Write(0x3D);
    DataFlash_SPI_Write(0x2A);
@@ -41,28 +46,14 @@ void DataFlash_SoftReset(void)
    DataFlash_Deselect();
 }
 
-unsigned short DataFlash_GetStatus(void)
+unsigned char DataFlash_GetStatus(void)
 {
-   unsigned short status;
+   unsigned char status;
    DataFlash_Select();
    DataFlash_SPI_Write(0xD7);
-   status = DataFlash_SPI_Read() << 8;
-   status = (status & 0xff00) | DataFlash_SPI_Read();
+   status = DataFlash_SPI_Read();
    DataFlash_Deselect();
    return status;
-}
-
-unsigned char DataFlash_ReadByte(unsigned long address)
-{
-   unsigned char data;
-   DataFlash_Select();
-   DataFlash_SPI_Write(0x03);
-   DataFlash_SPI_Write((address >> 16) & 0x1F);
-   DataFlash_SPI_Write((address >> 8)  & 0xFF);
-   DataFlash_SPI_Write( address        & 0xFF);
-   data = DataFlash_SPI_Read();
-   DataFlash_Deselect();
-   return data;
 }
 
 void DataFlash_ReadBlock(unsigned long address, unsigned char *buffer, unsigned short length)
@@ -78,47 +69,15 @@ void DataFlash_ReadBlock(unsigned long address, unsigned char *buffer, unsigned 
    DataFlash_Deselect();
 }
 
-void DataFlash_ReadPage(unsigned long address, unsigned char *buffer)
+void DataFlash_ReadPage(unsigned long page, unsigned char *buffer)
 {
-   unsigned short i;
-   DataFlash_Select();
-   DataFlash_SPI_Write(0x03);
-   DataFlash_SPI_Write((address >> 7) & 0x1F);
-   DataFlash_SPI_Write(address << 1);
-   DataFlash_SPI_Write(0x00);
-   for(i=0;i<512;i++)
-      *buffer++ = DataFlash_SPI_Read();
-   DataFlash_Deselect();
-}
-
-void DataFlash_WritePage(unsigned long page, unsigned char *buffer)
-{
-   unsigned short i;
-
-   // Fill Buffer
-   DataFlash_Select();
-   DataFlash_SPI_Write(0x84);
-   DataFlash_SPI_Write(0x00);
-   DataFlash_SPI_Write(0x00);
-   DataFlash_SPI_Write(0x00);
-   for(i=0;i<512;i++)
-      DataFlash_SPI_Write(*buffer++);
-   DataFlash_Deselect();
-
-   // Flush
-   DataFlash_Select();
-   DataFlash_SPI_Write(0x83);
-   DataFlash_SPI_Write((page >> 7) & 0x1F);
-   DataFlash_SPI_Write(page << 1);
-   DataFlash_SPI_Write(0x00);
-   DataFlash_Deselect();
-   while(DataFlash_Busy);
+   unsigned long address = page * 512UL;
+   DataFlash_ReadBlock(address, buffer, 512);
 }
 
 void DataFlash_FillBuffer(unsigned short address, unsigned char *buffer, unsigned short length)
 {
    unsigned short i;
-
    DataFlash_Select();
    DataFlash_SPI_Write(0x84);
    DataFlash_SPI_Write(0x00);
@@ -138,4 +97,22 @@ void DataFlash_FlushBuffer(unsigned long page)
    DataFlash_SPI_Write(0x00);
    DataFlash_Deselect();
    while(DataFlash_Busy);
+}
+
+void DataFlash_WritePage(unsigned long page, unsigned char *buffer)
+{
+   DataFlash_FillBuffer(0, buffer, 512);
+   DataFlash_FlushBuffer(page);
+}
+
+void DataFlash_ChipErase(unsigned char wait)
+{
+   DataFlash_Select();
+   DataFlash_SPI_Write(0xC7);
+   DataFlash_SPI_Write(0x94);
+   DataFlash_SPI_Write(0x80);
+   DataFlash_SPI_Write(0x9A);
+   DataFlash_Deselect();
+   if (wait)
+      while(DataFlash_Busy);
 }

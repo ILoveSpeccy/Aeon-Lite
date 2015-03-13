@@ -107,7 +107,9 @@ void USB_Generic_Handler(void)
 
          case CMD_FPGA_WRITE_BITSTREAM:   // Configure FPGA (Bytes 1-63)
          {
+            UserLED2_On;
             FPGA_Write_Bitstream(&USBGenericOutPacket[1], 63);
+            UserLED2_Off;
             break;
          }
 
@@ -125,33 +127,34 @@ void USB_Generic_Handler(void)
          }
 
          // ==================================================================================================================
-         // TEST
-         case 30:
+         case CMD_SET_SPI_MASTER:
          {
-            Flash_Select;
+            SPI_Mux = USBGenericOutPacket[1];
             break;
          }
 
-         case 31:
+         case CMD_DATAFLASH_RESET:
          {
-            Flash_Deselect;
+            DataFlash_SoftReset();
             break;
          }
 
-         case 32:
+         case CMD_DATAFLASH_POWER_OF_TWO:
          {
-            USBGenericInPacket[0] = SPI1_Transfer(USBGenericOutPacket[1]);
+            DataFlash_PowerOfTwo();
+            break;
+         }
+
+         case CMD_DATAFLASH_GET_STATUS:
+         {
+            USBGenericInPacket[0] = DataFlash_GetStatus();
             USB_Generic_Flush();
             break;
          }
 
-         case CMD_DATAFLASH_READ:
+         case CMD_DATAFLASH_CHIP_ERASE:
          {
-            unsigned long address = ((unsigned long)USBGenericOutPacket[1] << 16) |
-                                    ((unsigned long)USBGenericOutPacket[2] << 8)  |
-                                                    USBGenericOutPacket[3];
-            DataFlash_ReadBlock(address, USBGenericInPacket, 32);
-            USB_Generic_Flush();
+            DataFlash_ChipErase(0);
             break;
          }
 
@@ -169,12 +172,15 @@ void USB_Generic_Handler(void)
             break;
          }
 
-         case CMD_SET_SPIMASTER:
+         case CMD_DATAFLASH_READ:
          {
-            SPI_Mux = USBGenericOutPacket[1];
+            unsigned long address = ((unsigned long)USBGenericOutPacket[1] << 16) |
+                                    ((unsigned long)USBGenericOutPacket[2] << 8)  |
+                                                    USBGenericOutPacket[3];
+            DataFlash_ReadBlock(address, USBGenericInPacket, 32);
+            USB_Generic_Flush();
             break;
          }
-         // END TEST
          // ==================================================================================================================
       }
       UserLED1_Off;

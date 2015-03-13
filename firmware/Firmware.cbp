@@ -30,9 +30,6 @@
 			<Add option="-Tld/hid_boot_p$(chip).gld" />
 		</Linker>
 		<Unit filename="COPYING" />
-		<Unit filename="Firmware.cbp" />
-		<Unit filename="Firmware.depend" />
-		<Unit filename="Firmware.layout" />
 		<Unit filename="beep.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -98,6 +95,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="timer.h" />
+		<Unit filename="todo.txt" />
 		<Unit filename="usb/usb.h" />
 		<Unit filename="usb/usb_ch9.h" />
 		<Unit filename="usb/usb_common.h" />

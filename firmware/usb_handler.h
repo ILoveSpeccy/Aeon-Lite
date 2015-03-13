@@ -22,10 +22,15 @@
 
 #define CMD_RTC_READ                      0x10
 #define CMD_RTC_WRITE                     0x11
-#define CMD_DATAFLASH_FILL_BUFFER         0x12
-#define CMD_DATAFLASH_FLUSH_BUFFER        0x13
-#define CMD_DATAFLASH_READ                0x14
-#define CMD_SET_SPIMASTER                 0x15
+
+#define CMD_SET_SPI_MASTER                0x20
+#define CMD_DATAFLASH_RESET               0x21
+#define CMD_DATAFLASH_POWER_OF_TWO        0x22
+#define CMD_DATAFLASH_GET_STATUS          0x23
+#define CMD_DATAFLASH_CHIP_ERASE          0x24
+#define CMD_DATAFLASH_FILL_BUFFER         0x25
+#define CMD_DATAFLASH_FLUSH_BUFFER        0x26
+#define CMD_DATAFLASH_READ                0x27
 
 #define CMD_FPGA_GET_STATUS               0xA0
 #define CMD_FPGA_RESET                    0xA1

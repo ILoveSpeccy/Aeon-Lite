@@ -306,11 +306,11 @@
 
 1424880237 d:\aeonlite\firmware\usb_handler.h
 
-1425719024 source:d:\projects\aeonlite\firmware\dataflash.c
+1426195373 source:d:\projects\aeonlite\firmware\dataflash.c
 	"dataflash.h"
 	"hal.h"
 
-1425719049 d:\projects\aeonlite\firmware\dataflash.h
+1426196354 d:\projects\aeonlite\firmware\dataflash.h
 
 1425560670 d:\projects\aeonlite\firmware\hardware.h
 	<P24FJ128GB106.h>
@@ -355,7 +355,7 @@
 	<i2c.h>
 	"hardware.h"
 
-1425962479 source:d:\projects\aeonlite\firmware\main.c
+1426232249 source:d:\projects\aeonlite\firmware\main.c
 	"hal.h"
 	"timer.h"
 	"usb_handler.h"
@@ -365,7 +365,7 @@
 
 1425625201 d:\projects\aeonlite\firmware\timer.h
 
-1426009816 d:\projects\aeonlite\firmware\usb_handler.h
+1426197041 d:\projects\aeonlite\firmware\usb_handler.h
 
 1425962191 source:d:\projects\aeonlite\firmware\timer.c
 	"timer.h"
@@ -509,20 +509,20 @@
 
 1311532020 d:\projects\aeonlite\firmware\bits.h
 
-1425589474 d:\projects\aeonlite\firmware\hal.h
+1426179971 d:\projects\aeonlite\firmware\hal.h
 	<P24FJ128GB106.h>
 	<P24FJ192GB106.h>
 	<P24FJ256GB106.h>
 	<P24FJ128GB206.h>
 	<P24FJ256GB206.h>
 
-1425589900 source:d:\projects\aeonlite\firmware\hal.c
+1426179953 source:d:\projects\aeonlite\firmware\hal.c
 	<pps.h>
 	<uart.h>
 	<i2c.h>
 	"hal.h"
 
-1426009690 source:d:\projects\aeonlite\firmware\usb_handler.c
+1426233442 source:d:\projects\aeonlite\firmware\usb_handler.c
 	<usb/usb.h>
 	<usb/usb_device.h>
 	<usb/usb_device_cdc.h>
@@ -532,7 +532,7 @@
 	"fpga.h"
 	"rtc.h"
 
-1426009954 source:d:\projects\aeonlite\firmware\startup.c
+1426240891 source:d:\projects\aeonlite\firmware\startup.c
 	<stdio.h>
 	<string.h>
 	"hal.h"

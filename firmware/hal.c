@@ -185,6 +185,20 @@ unsigned char SPI1_Transfer(unsigned char data)
    return (unsigned char)SPI1BUF;
 }
 
+void SPI1_WriteBuffer(unsigned char *buffer, unsigned short length)
+{
+   unsigned short i;
+   for(i = 0 ; i < length ; i++)
+      SPI1_Transfer(buffer[i]);
+}
+
+void SPI1_ReadBuffer(unsigned char *buffer, unsigned short length)
+{
+   unsigned short i;
+   for(i = 0 ; i < length ; i++)
+      buffer[i] = SPI1_Transfer(0xFF);
+}
+
 /// ################################################################################################
 /// # Debug UART 19200 boud
 /// ################################################################################################

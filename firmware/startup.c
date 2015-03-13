@@ -95,6 +95,10 @@ void Startup(void)
 
    videoWindowPrintf(&workarea, 0x07, "Parsing Configuration File..\n");
 
+   /// ##########################################################################
+//   return;
+   /// ##########################################################################
+
    MainMenu(&config, 0x07, 0x4F);
 
    unsigned long addr, length;

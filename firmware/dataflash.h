@@ -25,16 +25,20 @@
 #define DataFlash_Select()       Flash_Select
 #define DataFlash_Deselect()     Flash_Deselect
 
-#define DataFlash_Busy           (!(DataFlash_GetStatus() & 0x8000))
+#define DataFlash_Busy           (!(DataFlash_GetStatus() & 0x80))
 
 void DataFlash_Init(void);
+void DataFlash_PowerOfTwo(void);
 void DataFlash_SoftReset(void);
-unsigned short DataFlash_GetStatus(void);
-unsigned char DataFlash_ReadByte(unsigned long address);
+
+unsigned char DataFlash_GetStatus(void);
+void DataFlash_ChipErase(unsigned char wait);
+
 void DataFlash_ReadBlock(unsigned long address, unsigned char *buffer, unsigned short length);
-void DataFlash_ReadPage(unsigned long address, unsigned char *buffer);
-void DataFlash_WritePage(unsigned long address, unsigned char *buffer);
+void DataFlash_ReadPage(unsigned long page, unsigned char *buffer);
+
 void DataFlash_FillBuffer(unsigned short address, unsigned char *buffer, unsigned short length);
-void DataFlash_FlushBuffer(unsigned long address);
+void DataFlash_FlushBuffer(unsigned long page);
+void DataFlash_WritePage(unsigned long page, unsigned char *buffer);
 
 #endif  // _DATAFLASH_H_

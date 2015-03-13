@@ -121,6 +121,8 @@ void Controller_Init(void);
 void SPI1_Init(void);
 void SPI1_Setup(unsigned char data);
 unsigned char SPI1_Transfer(unsigned char data);
+void SPI1_WriteBuffer(unsigned char *buffer, unsigned short length);
+void SPI1_ReadBuffer(unsigned char *buffer, unsigned short length);
 
 /// # FPGA Configuration & SPI-Communication (SPI2)
 /// ############################################################################
