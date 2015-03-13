@@ -29,6 +29,16 @@ private slots:
 
     void on_pushButtonWriteDataflash_clicked();
 
+    void on_pushButtonEraseDataflash_clicked();
+
+    void on_pushButtonStatusDataflash_clicked();
+
+    void on_pushButtonPrepareDataflash_clicked();
+
+    void on_pushButtonReadRTC_clicked();
+
+    void on_pushButtonSetRTC_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSettings *settings;
