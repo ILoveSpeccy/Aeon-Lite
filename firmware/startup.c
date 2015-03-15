@@ -66,6 +66,22 @@ void Startup(void)
    videoWindowPrintf(&workarea, 0x07, "v0.2 by ILoveSpeccy '07.03.2015\n");
    videoWindowPrintf(&workarea, 0x07, "===============================\n\n");
 
+   // Print charset
+   // ====================================================================================================
+   videoWindowSetCursor(&workarea,0 ,13);
+   videoWindowPrintf(&workarea, 0x0F, "Charset:\n");
+   unsigned short k;
+   for(k=32;k<256;k++)
+   {
+      videoWindowPrintf(&workarea, 0x0D, "%02X=",k);
+      videoWindowPrintf(&workarea, 0x8F, "%c",k);
+      if (k!=255)
+         videoWindowPrintf(&workarea, 0x0D, " ");
+   }
+   // ====================================================================================================
+
+   videoWindowSetCursor(&workarea, 0, 5);
+
    // Проверяем наличие SD-карты
 
    videoWindowPrintf(&workarea, 0x07, "Detecting SD-Card..");
@@ -105,26 +121,27 @@ void Startup(void)
    unsigned char value, mode;
    char filename[80];
 
+   unsigned char index = 0;
 
-   if (iniGetKey("config.ini", config.Name[config.CurrentItem], "ramclear", buffer))
+   while (iniGetKey("config.ini", config.Name[config.CurrentItem], "rom", index++, buffer))
+   {
+      iniResolveROM(buffer, filename, &addr, &mode);
+      videoWindowPrintf(&workarea, 0x07, "Found \"ROM\" Key: Filename \"%s\", Addr: 0x%06lX, Mod: %02X\n", filename, addr, mode);
+      InitRAMFromFile(filename, addr, mode);
+   }
+
+   if (iniGetKey("config.ini", config.Name[config.CurrentItem], "ramclear", 0, buffer))
    {
       iniResolveRAM(buffer, &addr, &length, &value, &mode);
       videoWindowPrintf(&workarea, 0x07, "Init RAM (0x%06lX, 0x%06lX, 0x%02X, %u)\n",  addr, length, value, mode);
       FillRAM(addr, length, value, mode);
    }
 
-   if (iniGetKey("config.ini", config.Name[config.CurrentItem], "rom", buffer))
-   {
-      iniResolveROM(buffer, filename, &addr, &mode);
-      videoWindowPrintf(&workarea, 0x07, "Found \"ROM\" Key: Filename \"%s\", Addr: %08X, Mod: %i\n", filename, addr, mode);
-      InitRAMFromFile(filename, addr, mode);
-   }
-
-   iniGetKey("config.ini", config.Name[config.CurrentItem], "bitstream", buffer);
+   iniGetKey("config.ini", config.Name[config.CurrentItem], "bitstream", 0, buffer);
 
    FPGA_Configure_from_File(buffer);
 
-   iniGetKey("config.ini", config.Name[config.CurrentItem], "spimaster", buffer);
+   iniGetKey("config.ini", config.Name[config.CurrentItem], "spimaster", 0, buffer);
    if(strcmp(buffer,"fpga"))
    {
       printf("SPI Master is PIC24\n");

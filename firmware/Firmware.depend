@@ -340,12 +340,13 @@
 	"diskio.h"
 	"../hal.h"
 
-1425962211 source:d:\projects\aeonlite\firmware\fpga.c
+1426417983 source:d:\projects\aeonlite\firmware\fpga.c
 	<string.h>
 	"hal.h"
 	"fat/ff.h"
 	"fpga.h"
 	"dataflash.h"
+	<libpic30.h>
 
 1424880255 d:\projects\aeonlite\firmware\fpga.h
 
@@ -365,7 +366,7 @@
 
 1425625201 d:\projects\aeonlite\firmware\timer.h
 
-1426197041 d:\projects\aeonlite\firmware\usb_handler.h
+1426379866 d:\projects\aeonlite\firmware\usb_handler.h
 
 1425962191 source:d:\projects\aeonlite\firmware\timer.c
 	"timer.h"
@@ -462,7 +463,7 @@
 
 1425472399 d:\projects\aeonlite\firmware\eeprom.h
 
-1425765380 source:d:\projects\aeonlite\firmware\iniparser.c
+1426424432 source:d:\projects\aeonlite\firmware\iniparser.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
@@ -470,7 +471,7 @@
 	"iniparser.h"
 	"fat/ff.h"
 
-1425923554 d:\projects\aeonlite\firmware\iniparser.h
+1426424189 d:\projects\aeonlite\firmware\iniparser.h
 
 1425766823 source:d:\projects\aeonlite\firmware\menu.c
 	<string.h>
@@ -491,7 +492,7 @@
 
 1425457106 d:\projects\aeonlite\firmware\rtc.h
 
-1425589024 source:d:\projects\aeonlite\firmware\video.c
+1426446028 source:d:\projects\aeonlite\firmware\video.c
 	<stdio.h>
 	<stdarg.h>
 	<string.h>
@@ -522,7 +523,7 @@
 	<i2c.h>
 	"hal.h"
 
-1426233442 source:d:\projects\aeonlite\firmware\usb_handler.c
+1426380631 source:d:\projects\aeonlite\firmware\usb_handler.c
 	<usb/usb.h>
 	<usb/usb_device.h>
 	<usb/usb_device_cdc.h>
@@ -532,7 +533,7 @@
 	"fpga.h"
 	"rtc.h"
 
-1426240891 source:d:\projects\aeonlite\firmware\startup.c
+1426446196 source:d:\projects\aeonlite\firmware\startup.c
 	<stdio.h>
 	<string.h>
 	"hal.h"

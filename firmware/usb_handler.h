@@ -31,6 +31,9 @@
 #define CMD_DATAFLASH_FILL_BUFFER         0x25
 #define CMD_DATAFLASH_FLUSH_BUFFER        0x26
 #define CMD_DATAFLASH_READ                0x27
+#define CMD_SRAM_CONFIGURE                0x28
+#define CMD_SRAM_WRITE                    0x29
+#define CMD_SRAM_READ                     0x2A
 
 #define CMD_FPGA_GET_STATUS               0xA0
 #define CMD_FPGA_RESET                    0xA1

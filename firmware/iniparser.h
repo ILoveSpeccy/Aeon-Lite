@@ -24,7 +24,8 @@
 
 unsigned char iniBrowseSections(char* filename, unsigned char index, char* section);
 unsigned char iniBrowseKeys(char* filename, char* section, unsigned char index, char* key, char* value);
-unsigned char iniGetKey(char* filename, char* section, char* key, char* value);
+unsigned char iniGetKey(char* filename, char* section, char* key, unsigned char index, char* value);
+//unsigned char iniGetKey(char* filename, char* section, char* key, char* value);
 unsigned char iniResolveROM(char* source, char* filename, unsigned long* address, unsigned char* offset);
 unsigned char iniResolveRAM(char* source, unsigned long* address, unsigned long* length, unsigned char* value, unsigned char* offset);
 unsigned char iniBool(char* source);

@@ -13,20 +13,18 @@
 				<Option compiler="xc16" />
 			</Target>
 			<Environment>
-				<Variable name="chip" value="24FJ256GB206" />
+				<Variable name="chip" value="24FJ128GB106" />
 			</Environment>
 		</Build>
 		<Compiler>
-			<Add option="-O2" />
 			<Add option="-Wall" />
 			<Add option="-mcpu=$(chip)" />
 			<Add directory="." />
 			<Add directory="./usb" />
 		</Compiler>
 		<Linker>
-			<Add option="-s" />
 			<Add option="-mcpu=$(chip)" />
-			<Add option="-Wl,--report-mem,--heap=512,--data-init" />
+			<Add option="-Wl,--report-mem,--heap=1024,--data-init" />
 			<Add option="-Tld/hid_boot_p$(chip).gld" />
 		</Linker>
 		<Unit filename="COPYING" />

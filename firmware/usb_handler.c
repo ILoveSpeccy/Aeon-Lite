@@ -181,6 +181,32 @@ void USB_Generic_Handler(void)
             USB_Generic_Flush();
             break;
          }
+
+         case CMD_SRAM_CONFIGURE:
+         {
+            unsigned long address = ((unsigned long)USBGenericOutPacket[1] << 16) |
+                                    ((unsigned long)USBGenericOutPacket[2] << 8)  |
+                                                    USBGenericOutPacket[3];
+            RAMSetAddr(address, USBGenericOutPacket[4]);
+            break;
+         }
+
+         case CMD_SRAM_WRITE:
+         {
+            UserLED2_On;
+            WriteRAMFromBuffer(&USBGenericOutPacket[2], USBGenericOutPacket[1]);
+            UserLED2_Off;
+            break;
+         }
+
+         case CMD_SRAM_READ:
+         {
+            UserLED2_On;
+            ReadRAMToBuffer(USBGenericInPacket, USBGenericOutPacket[1]);
+            USB_Generic_Flush();
+            UserLED2_Off;
+            break;
+         }
          // ==================================================================================================================
       }
       UserLED1_Off;

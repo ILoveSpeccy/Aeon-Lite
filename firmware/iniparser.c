@@ -176,9 +176,10 @@ unsigned char iniBrowseKeys(char* filename, char* section, unsigned char index, 
     return result;
 }
 
-unsigned char iniGetKey(char* filename, char* section, char* key, char* value)
+unsigned char iniGetKey(char* filename, char* section, char* key, unsigned char index, char* value)
 {
     char tmp[INI_BUFFER_SIZE];
+    unsigned char count = 0;
     int s = 0;
     int k;
 
@@ -189,7 +190,8 @@ unsigned char iniGetKey(char* filename, char* section, char* key, char* value)
             k = 0;
             while(iniBrowseKeys(filename, section, k++, tmp, value))
                 if (!strcmp(tmp, key))
-                    return 1;
+                     if (count++ == index)
+                        return 1;
         }
     }
     return 0;
@@ -213,10 +215,10 @@ unsigned char iniResolveROM(char* source, char* filename, unsigned long* address
             else
             {
                 *address = iniLong(buffer);
-                if (*i == '2')
-                    *offset = 2;
+                if (*i == '0')
+                    *offset = 0b00000000;
                 else
-                    *offset = 1;
+                    *offset = 0b00000001;
                 return 1;
             }
             j = buffer;
@@ -249,10 +251,10 @@ unsigned char iniResolveRAM(char* source, unsigned long* address, unsigned long*
             else
             {
                 *value = iniLong(buffer);
-                if (*i == '2')
-                    *offset = 2;
+                if (*i == '0')
+                    *offset = 0b00000000;
                 else
-                    *offset = 1;
+                    *offset = 0b00000001;
                 return 1;
             }
             j = buffer;

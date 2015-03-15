@@ -34,6 +34,7 @@
 #include "fat/ff.h"
 #include "fpga.h"
 #include "dataflash.h"
+#include <libpic30.h>
 
 static unsigned char Buffer[512];
 
@@ -112,11 +113,12 @@ unsigned char InitRAMFromFile(char* filename, unsigned long startaddr, unsigned 
     UINT Readed = 0;
 
     f_mount(&FileSystem, "", 0);
-    Result = f_open(&InputFile, filename, FA_READ);
+    Result = f_open(&InputFile, filename, FA_OPEN_EXISTING | FA_READ);
     if (Result)
         return Result;
 
-    RAMSetAddr(startaddr, mode);
+    RAMSetAddr(startaddr, mode & 0x01);
+//   RAMSetAddr(0,0);
 
     while(1)
     {
@@ -144,10 +146,10 @@ void FillRAM(unsigned long startaddr, unsigned long length, unsigned char value,
 
 void RAMSetAddr(unsigned long addr, unsigned char mode)
 {
-    fpgaSetMode(mode);
     fpgaSetHAddr((addr>>16) & 0xff);
     fpgaSetMAddr((addr>>8) & 0xff);
     fpgaSetLAddr(addr & 0xff);
+    fpgaSetMode(mode);
 }
 
 void WriteRAMFromBuffer(unsigned char *buffer, unsigned short length)

@@ -23,7 +23,7 @@
 #include "video.h"
 #include "hal.h"
 
-const unsigned char Frame[8] = {153,157,139,138,140,157,152,138};
+const unsigned char Frame[8] = {0x9C,0x8C,0xAC,0xAA,0x8E,0x8C,0x8D,0x95};
 
 void videoWriteBuffer (unsigned char addr, char* buffer, unsigned char cnt)
 {
