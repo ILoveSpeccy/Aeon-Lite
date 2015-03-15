@@ -1,7 +1,7 @@
 ##############################################################
 #
-# Xilinx Core Generator version 14.6
-# Date: Sat Apr 12 20:10:31 2014
+# Xilinx Core Generator version 14.7
+# Date: Sat Mar 14 13:07:32 2015
 #
 ##############################################################
 #
@@ -46,7 +46,7 @@ CSET axi_id_width=4
 CSET axi_slave_type=Memory_Slave
 CSET axi_type=AXI4_Full
 CSET byte_size=9
-CSET coe_file=.\cp866font.coe
+CSET coe_file=.\fontrom.coe
 CSET collision_warnings=ALL
 CSET component_name=fontrom
 CSET disable_collision_warnings=false
@@ -103,4 +103,4 @@ CSET write_width_b=8
 MISC pkg_timestamp=2012-03-20T18:34:43Z
 # END Extra information
 GENERATE
-# CRC: b658e469
+# CRC: 161b9663
