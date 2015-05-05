@@ -720,3 +720,156 @@
 	<usb/usb.h>
 	<usb/usb_device_hid.h>
 
+1391470620 source:d:\projects\aeonlite_\bootloader\app_hid_boot_loader.c
+	<usb/usb.h>
+	<usb/usb_device_hid.h>
+	<boot.h>
+
+1407199808 d:\projects\aeonlite_\bootloader\usb\usb.h
+	"system.h"
+	"system_config.h"
+	<usb/usb_common.h>
+	<usb/usb_ch9.h>
+	<usb/usb_device.h>
+	<usb/usb_host.h>
+	<usb/usb_otg.h>
+	<usb/usb_hal.h>
+
+1430075961 d:\projects\aeonlite_\bootloader\system.h
+	<p24FJ256GB206.h>
+	<p24FJ256DA206.h>
+	<p24FJ128GB206.h>
+	<p24FJ128DA206.h>
+	<p24FJ256GB106.h>
+	<p24FJ256DA106.h>
+	<p24FJ192GB106.h>
+	<p24FJ128GB106.h>
+	<p24FJ128DA106.h>
+	<stdbool.h>
+	<buttons.h>
+	<leds.h>
+	<adc.h>
+	<io_mapping.h>
+	<power.h>
+
+1404129972 d:\projects\aeonlite_\bootloader\buttons.h
+	<stdbool.h>
+
+1404129476 d:\projects\aeonlite_\bootloader\leds.h
+	<stdbool.h>
+
+1404192110 d:\projects\aeonlite_\bootloader\io_mapping.h
+	<system.h>
+
+1391470620 d:\projects\aeonlite_\bootloader\power.h
+
+1391470620 d:\projects\aeonlite_\bootloader\system_config.h
+	"usb_config.h"
+
+1391470620 d:\projects\aeonlite_\bootloader\usb_config.h
+	"usb/usb_ch9.h"
+
+1407199808 d:\projects\aeonlite_\bootloader\usb\usb_ch9.h
+	<stdint.h>
+
+1407199819 d:\projects\aeonlite_\bootloader\usb\usb_common.h
+	<limits.h>
+	<stdbool.h>
+	<stdint.h>
+	"system.h"
+	"system_config.h"
+
+1407199823 d:\projects\aeonlite_\bootloader\usb\usb_device.h
+	<usb/usb_common.h>
+	<stdint.h>
+	<usb/usb_hal.h>
+
+1407199823 d:\projects\aeonlite_\bootloader\usb\usb_hal.h
+	<stdint.h>
+	"usb/usb_hal_pic16f1.h"
+	"usb/usb_hal_pic18.h"
+	<usb/usb_hal_dspic33e.h>
+	<usb/usb_hal_pic24e.h>
+	<usb/usb_hal_pic24f.h>
+	"usb/usb_hal_pic32.h"
+
+1407199823 d:\projects\aeonlite_\bootloader\usb\usb_hal_pic24f.h
+	"system.h"
+	"system_config.h"
+	<stdint.h>
+	<string.h>
+	<usb/usb_common.h>
+
+1407199808 d:\projects\aeonlite_\bootloader\usb\usb_device_hid.h
+	<usb/usb_ch9.h>
+
+1430115241 d:\projects\aeonlite_\bootloader\boot.h
+	<xc.h>
+
+1410416479 source:d:\projects\aeonlite_\bootloader\app_led_usb_status.c
+	<stdint.h>
+	<system.h>
+	<usb/usb_device.h>
+
+1404130022 source:d:\projects\aeonlite_\bootloader\buttons.c
+	<xc.h>
+	<stdbool.h>
+	<buttons.h>
+
+1404129898 source:d:\projects\aeonlite_\bootloader\leds.c
+	<xc.h>
+	<leds.h>
+	<stdbool.h>
+
+1410423936 source:d:\projects\aeonlite_\bootloader\main.c
+	<system.h>
+	<system_config.h>
+	<usb/usb.h>
+	<usb/usb_device_hid.h>
+	<app_hid_boot_loader.h>
+	<app_led_usb_status.h>
+
+1391470620 d:\projects\aeonlite_\bootloader\app_hid_boot_loader.h
+
+1391470620 d:\projects\aeonlite_\bootloader\app_led_usb_status.h
+
+1430115203 source:d:\projects\aeonlite_\bootloader\system.c
+	<p24FJ256GB206.h>
+	<p24FJ256DA206.h>
+	<p24FJ128GB206.h>
+	<p24FJ128DA206.h>
+	<p24FJ256GB106.h>
+	<p24FJ256DA106.h>
+	<p24FJ192GB106.h>
+	<p24FJ128GB106.h>
+	<p24FJ128DA106.h>
+	<system.h>
+	<system_config.h>
+	<usb/usb.h>
+	<leds.h>
+	<buttons.h>
+	<adc.h>
+
+1410422720 source:d:\projects\aeonlite_\bootloader\usb\usb_device.c
+	<stdint.h>
+	<stddef.h>
+	"system.h"
+	"system_config.h"
+	<usb/usb.h>
+	<usb/usb_ch9.h>
+	<usb/usb_device.h>
+	<usb/usb_device_local.h>
+	"usb/usb_device_msd.h"
+
+1407199808 d:\projects\aeonlite_\bootloader\usb\usb_device_local.h
+	"system_config.h"
+
+1407199808 source:d:\projects\aeonlite_\bootloader\usb\usb_device_hid.c
+	"system_config.h"
+	<usb/usb.h>
+	<usb/usb_device_hid.h>
+
+1391470620 source:d:\projects\aeonlite_\bootloader\usb_descriptors.c
+	<usb/usb.h>
+	<usb/usb_device_hid.h>
+

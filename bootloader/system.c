@@ -22,14 +22,22 @@
 
 #if defined(__PIC24FJ256GB206__)
     #include <p24FJ256GB206.h>
+#elif defined(__PIC24FJ256DA206__)
+    #include <p24FJ256DA206.h>
 #elif defined(__PIC24FJ128GB206__)
     #include <p24FJ128GB206.h>
+#elif defined(__PIC24FJ128DA206__)
+    #include <p24FJ128DA206.h>
 #elif defined(__PIC24FJ256GB106__)
     #include <p24FJ256GB106.h>
+#elif defined(__PIC24FJ256DA106__)
+    #include <p24FJ256DA106.h>
 #elif defined(__PIC24FJ192GB106__)
     #include <p24FJ192GB106.h>
 #elif defined(__PIC24FJ128GB106__)
     #include <p24FJ128GB106.h>
+#elif defined(__PIC24FJ128DA106__)
+    #include <p24FJ128DA106.h>
 #else
     #error "Unsupported MCU"
 #endif
@@ -42,7 +50,7 @@
 #include <adc.h>
 
 /** CONFIGURATION Bits **********************************************/
-#if defined(__PIC24FJ128GB206__) || defined(__PIC24FJ256GB206__)
+#if defined(__PIC24FJ128GB206__) || defined(__PIC24FJ256GB206__) || defined(__PIC24FJ128DA106__) || defined(__PIC24FJ256DA106__) || defined(__PIC24FJ128DA206__) || defined(__PIC24FJ256DA206__)
     _CONFIG1(
         FWDTEN_OFF &
         ICS_PGx2 &
@@ -99,7 +107,7 @@ void SYSTEM_Initialize( SYSTEM_STATE state )
     // Disable analog pins
     #if defined(__PIC24FJ128GB106__) || defined(__PIC24FJ192GB106__) || defined(__PIC24FJ256GB106__)
         AD1PCFGL = 0xFFFF;
-    #elif defined(__PIC24FJ128GB206__) || defined(__PIC24FJ256GB206__)
+    #elif defined(__PIC24FJ128GB206__) || defined(__PIC24FJ256GB206__) || defined(__PIC24FJ128DA106__) || defined(__PIC24FJ256DA106__) || defined(__PIC24FJ128DA206__) || defined(__PIC24FJ256DA206__)
         ANSB = 0;
         ANSC = 0;
         ANSD = 0;

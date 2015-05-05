@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<results>
+    <error file="app_hid_boot_loader.c" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="app_hid_boot_loader.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="app_led_usb_status.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB106__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB106__&apos; was not checked because its code equals another one." />
+    <error file="io_mapping.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB206__&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="main.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="system.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB106__&apos; was not checked because its code equals another one." />
+    <error file="system.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_ch9.h" line="292" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="293" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="332" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="334" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="335" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="336" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="337" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="338" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="355" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="356" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="360" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="361" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="365" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="366" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="369" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="370" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="371" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="372" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="376" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="377" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="380" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="381" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="382" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="383" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="387" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="388" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="393" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="394" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="398" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="399" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="400" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="401" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="404" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="405" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="409" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="410" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="411" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="412" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="414" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="416" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="417" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb_ch9.h" line="418" id="constStatement" severity="style" msg="Redundant code: Found a statement that begins with numeric constant." />
+    <error file="usb\usb.h" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_ch9.h" line="78" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="79" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="80" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bcdUSB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="81" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bDeviceClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="82" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bDeviceSubClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="83" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bDeviceProtocol&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="84" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bMaxPacketSize0&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="85" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::idVendor&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="86" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::idProduct&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="87" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bcdDevice&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="88" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::iManufacturer&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="89" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::iProduct&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="90" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::iSerialNumber&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="91" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_DESCRIPTOR::bNumConfigurations&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="104" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="105" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="106" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::wTotalLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="107" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::bNumInterfaces&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="108" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::bConfigurationValue&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="109" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::iConfiguration&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="110" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::bmAttributes&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="111" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_CONFIGURATION_DESCRIPTOR::bMaxPower&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="129" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="130" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="131" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bInterfaceNumber&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="132" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bAlternateSetting&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="133" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bNumEndpoints&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="134" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bInterfaceClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="135" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bInterfaceSubClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="136" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::bInterfaceProtocol&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="137" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_INTERFACE_DESCRIPTOR::iInterface&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="150" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_ENDPOINT_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="151" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_ENDPOINT_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="152" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_ENDPOINT_DESCRIPTOR::bEndpointAddress&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="153" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_ENDPOINT_DESCRIPTOR::bmAttributes&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="154" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_ENDPOINT_DESCRIPTOR::wMaxPacketSize&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="155" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_ENDPOINT_DESCRIPTOR::bInterval&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="200" id="unusedStructMember" severity="style" msg="struct or union member &apos;DESCRIPTOR_ID::index&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="201" id="unusedStructMember" severity="style" msg="struct or union member &apos;DESCRIPTOR_ID::type&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="202" id="unusedStructMember" severity="style" msg="struct or union member &apos;DESCRIPTOR_ID::language_id&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="215" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_OTG_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="216" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_OTG_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="217" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_OTG_DESCRIPTOR::bmAttributes&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="239" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_STRING_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="240" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_STRING_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="258" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="259" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="260" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bcdUSB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="261" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bDeviceClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="262" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bDeviceSubClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="263" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bDeviceProtocol&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="264" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bMaxPacketSize0&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="265" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bNumConfigurations&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="266" id="unusedStructMember" severity="style" msg="struct or union member &apos;USB_DEVICE_QUALIFIER_DESCRIPTOR::bReserved&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="284" id="unusedStructMember" severity="style" msg="struct or union member &apos;CTRL_TRF_SETUP::bmRequestType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="285" id="unusedStructMember" severity="style" msg="struct or union member &apos;CTRL_TRF_SETUP::bRequest&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="286" id="unusedStructMember" severity="style" msg="struct or union member &apos;CTRL_TRF_SETUP::wValue&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="287" id="unusedStructMember" severity="style" msg="struct or union member &apos;CTRL_TRF_SETUP::wIndex&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="288" id="unusedStructMember" severity="style" msg="struct or union member &apos;CTRL_TRF_SETUP::wLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="296" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous0::Val&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="297" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous0::v&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="300" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous1::LB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="301" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous1::HB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="307" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous2::Val&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="308" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous2::v&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="311" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous3::LB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="312" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous3::HB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="318" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous4::Val&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="319" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous4::v&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="322" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous5::LB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="323" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous5::HB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="344" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous6::bmRequestType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="347" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous6::recipient&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="348" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous6::type&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="349" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous6::direction&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="78" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="79" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="80" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bcdUSB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="81" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bDeviceClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="82" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bDeviceSubClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="83" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bDeviceProtocol&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="84" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bMaxPacketSize0&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="85" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::idVendor&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="86" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::idProduct&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="87" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bcdDevice&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="88" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::iManufacturer&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="89" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::iProduct&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="90" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::iSerialNumber&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="91" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_DESCRIPTOR::bNumConfigurations&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="104" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="105" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="106" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::wTotalLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="107" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::bNumInterfaces&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="108" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::bConfigurationValue&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="109" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::iConfiguration&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="110" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::bmAttributes&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="111" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_CONFIGURATION_DESCRIPTOR::bMaxPower&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="129" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="130" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="131" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bInterfaceNumber&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="132" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bAlternateSetting&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="133" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bNumEndpoints&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="134" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bInterfaceClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="135" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bInterfaceSubClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="136" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::bInterfaceProtocol&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="137" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_INTERFACE_DESCRIPTOR::iInterface&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="150" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_ENDPOINT_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="151" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_ENDPOINT_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="152" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_ENDPOINT_DESCRIPTOR::bEndpointAddress&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="153" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_ENDPOINT_DESCRIPTOR::bmAttributes&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="154" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_ENDPOINT_DESCRIPTOR::wMaxPacketSize&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="155" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_ENDPOINT_DESCRIPTOR::bInterval&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="215" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_OTG_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="216" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_OTG_DESCRIPTOR::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="217" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_OTG_DESCRIPTOR::bmAttributes&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="239" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_STRING_DSC::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="240" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_STRING_DSC::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="258" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bLength&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="259" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bType&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="260" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bcdUSB&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="261" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bDeviceClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="262" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bDeviceSubClass&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="263" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bDeviceProtocol&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="264" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bMaxPacketSize0&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="265" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bNumConfigurations&apos; is never used." />
+    <error file="usb\usb_ch9.h" line="266" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_DEVICE_QUALIFIER_DESCRIPTOR::bReserved&apos; is never used." />
+    <error file="usb\usb_common.h" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="140" id="unusedStructMember" severity="style" msg="struct or union member &apos;TRANSFER_FLAGS::bitmap&apos; is never used." />
+    <error file="usb\usb_common.h" line="143" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous7::ep_num&apos; is never used." />
+    <error file="usb\usb_common.h" line="144" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous7::zero_pkt&apos; is never used." />
+    <error file="usb\usb_common.h" line="145" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous7::dts&apos; is never used." />
+    <error file="usb\usb_common.h" line="146" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous7::force_dts&apos; is never used." />
+    <error file="usb\usb_common.h" line="147" id="unusedStructMember" severity="style" msg="struct or union member &apos;Anonymous7::direction&apos; is never used." />
+    <error file="usb\usb_common.h" line="367" id="unusedStructMember" severity="style" msg="struct or union member &apos;_transfer_event_data::size&apos; is never used." />
+    <error file="usb\usb_common.h" line="368" id="unusedStructMember" severity="style" msg="struct or union member &apos;_transfer_event_data::pid&apos; is never used." />
+    <error file="usb\usb_common.h" line="383" id="unusedStructMember" severity="style" msg="struct or union member &apos;_vbus_power_data::port&apos; is never used." />
+    <error file="usb\usb_common.h" line="384" id="unusedStructMember" severity="style" msg="struct or union member &apos;_vbus_power_data::current&apos; is never used." />
+    <error file="usb\usb_common.h" line="396" id="unusedStructMember" severity="style" msg="struct or union member &apos;_override_client_driver_data::idVendor&apos; is never used." />
+    <error file="usb\usb_common.h" line="397" id="unusedStructMember" severity="style" msg="struct or union member &apos;_override_client_driver_data::idProduct&apos; is never used." />
+    <error file="usb\usb_common.h" line="398" id="unusedStructMember" severity="style" msg="struct or union member &apos;_override_client_driver_data::bDeviceClass&apos; is never used." />
+    <error file="usb\usb_common.h" line="399" id="unusedStructMember" severity="style" msg="struct or union member &apos;_override_client_driver_data::bDeviceSubClass&apos; is never used." />
+    <error file="usb\usb_common.h" line="400" id="unusedStructMember" severity="style" msg="struct or union member &apos;_override_client_driver_data::bDeviceProtocol&apos; is never used." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_common.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;COMPILER_MPLAB_C18&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;IMPLEMENT_MICROSOFT_OS_DESCRIPTOR&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DEVICE_DISABLE_DTS_CHECKING&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_ERROR_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_NONSTANDARD_EP0_REQUEST_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SET_CONFIGURATION_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SET_DESCRIPTOR_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SOF_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SUSPEND_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_TRANSFER_COMPLETE_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_TRANSFER_TERMINATED_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USER_GET_REPORT_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USER_SET_REPORT_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_hid.h" line="286" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_HID_DSC_HEADER::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_device_hid.h" line="287" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_HID_DSC_HEADER::wDscLength&apos; is never used." />
+    <error file="usb\usb_device_hid.h" line="294" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_HID_DSC::bLength&apos; is never used." />
+    <error file="usb\usb_device_hid.h" line="295" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_HID_DSC::bDescriptorType&apos; is never used." />
+    <error file="usb\usb_device_hid.h" line="296" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_HID_DSC::bcdHID&apos; is never used." />
+    <error file="usb\usb_device_hid.h" line="297" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_HID_DSC::bCountryCode&apos; is never used." />
+    <error file="usb\usb_device_hid.h" line="298" id="unusedStructMember" severity="style" msg="struct or union member &apos;_USB_HID_DSC::bNumDsc&apos; is never used." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_ERROR_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_NONSTANDARD_EP0_REQUEST_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SET_CONFIGURATION_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SET_DESCRIPTOR_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SOF_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SUSPEND_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_TRANSFER_COMPLETE_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_TRANSFER_TERMINATED_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_WAKEUP_FROM_SUSPEND_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_device_local.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__XC8&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_ERROR_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SOF_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__cplusplus&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_ERROR_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_DISABLE_SOF_HANDLER&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="202" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::BSTALL&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="203" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::DTSEN&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="205" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::DTS&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="206" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::UOWN&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="210" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::PID0&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="211" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::PID1&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="212" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::PID2&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="213" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::PID3&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="217" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::PID&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="219" id="unusedStructMember" severity="style" msg="struct or union member &apos;_BD_STAT::Val&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="248" id="unusedStructMember" severity="style" msg="struct or union member &apos;__USTAT::filler1&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="249" id="unusedStructMember" severity="style" msg="struct or union member &apos;__USTAT::ping_pong&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="250" id="unusedStructMember" severity="style" msg="struct or union member &apos;__USTAT::direction&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="251" id="unusedStructMember" severity="style" msg="struct or union member &apos;__USTAT::endpoint_number&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="253" id="unusedStructMember" severity="style" msg="struct or union member &apos;__USTAT::Val&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="266" id="unusedStructMember" severity="style" msg="struct or union member &apos;_POINTER::bLow&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="267" id="unusedStructMember" severity="style" msg="struct or union member &apos;_POINTER::bHigh&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="270" id="unusedStructMember" severity="style" msg="struct or union member &apos;_POINTER::_word&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="274" id="unusedStructMember" severity="style" msg="struct or union member &apos;_POINTER::bRam&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="276" id="unusedStructMember" severity="style" msg="struct or union member &apos;_POINTER::wRam&apos; is never used." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb\usb_hal_pic24f.h" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="toomanyconfigs" severity="style" msg="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_POLLING&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_HOST;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;USB_SUPPORT_OTG&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128DA206__&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ128GB206__&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ192GB106__&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA106__&apos; was not checked because its code equals another one." />
+    <error file="usb_descriptors.c" line="0" id="purgedConfiguration" severity="style" msg="The configuration &apos;__PIC24FJ256DA206__&apos; was not checked because its code equals another one." />
+    <error file="buttons.c" line="82" id="unusedFunction" severity="style" msg="The function &apos;BUTTON_Enable&apos; is never used." />
+    <error file="buttons.c" line="53" id="unusedFunction" severity="style" msg="The function &apos;BUTTON_IsPressed&apos; is never used." />
+    <error file="leds.c" line="214" id="unusedFunction" severity="style" msg="The function &apos;LED_Enable&apos; is never used." />
+    <error file="leds.c" line="178" id="unusedFunction" severity="style" msg="The function &apos;LED_Get&apos; is never used." />
+    <error file="leds.c" line="98" id="unusedFunction" severity="style" msg="The function &apos;LED_Off&apos; is never used." />
+    <error file="leds.c" line="58" id="unusedFunction" severity="style" msg="The function &apos;LED_On&apos; is never used." />
+    <error file="leds.c" line="138" id="unusedFunction" severity="style" msg="The function &apos;LED_Toggle&apos; is never used." />
+    <error id="missingInclude" severity="style" msg="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config." />
+</results>
