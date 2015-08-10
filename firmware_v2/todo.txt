@@ -1,0 +1,403 @@
+В программе "Aeon Loader" запоминать значение SPIMASTER, и восстанавливать
+его после работы с dataflash или sd-карточкой
+
+/// startup
+// После подачи питания на плату сначала инициализируется контроллер и вся
+// периферия.
+// Логи писать в EEPROM? Было бы очень даже неплохо кстати!!!
+
+// Проверяем наличие SD-карточки в слоте. Если её нет, то прыгаем в loop.
+// Если карта имеется, пробуем найти "config.ini", и если файла нет то loop.
+
+/// iniparser
+// Парсим содержимое ini-файла. Перебирая все sections ищем key "autorun",
+// и если таковой имеется, прыгаем на fpgaconfig
+
+/// ###############################################################################################
+// если список пустой, то прыгаем в loop, иначе выводим меню выбора прошивок
+// и когда прошивка выбрана, идём далее на fpgaconfig
+/// ###############################################################################################
+
+/// fpgaconfig
+// парсим все keys, и выполняем все манипуляции (inirom, clearram и т.д.)
+// грузим прошивку в FPGA
+// ну и на последок устанавливаем копыто "mcu_ready" в активное состояние!
+
+/// loop
+
+
+/// CURSES
+/// *******************************************************************************
+/*
+void wdelch(WINDOW* win)
+{
+    uint8_t i;
+    if(win->curx == win->w - 1)
+    {
+        writech(win->x + win->curx, win->y + win->cury, 1, " ");
+        writeattr(win->x + win->curx, win->y + win->cury, 1, &win->attr);
+    }
+    else
+        for(i=win->curx; i<win->w-1; i++)
+            waddch(win,'1');
+*/
+}
+
+// delwin(win)
+// getch()
+// attrget()
+// getmaxxy
+// getbegxy
+
+/*
+border, wborder, box, hline, whline, vline, wvline,
+mvhline, mvwhline, mvvline, mvwvline - create curses
+borders, horizontal and vertical lines
+
+deleteln,  wdeleteln,  insdelln, winsdelln, insertln, win-
+sertln - delete and insert lines in a curses window
+
+delch,  wdelch, mvdelch, mvwdelch - delete character under
+the cursor in a curses window
+
+getyx,  getparyx,  getbegyx,  getmaxyx - get curses cursor
+and window coordinates
+void getyx(WINDOW *win, int y, int x);
+void getparyx(WINDOW *win, int y, int x);
+void getbegyx(WINDOW *win, int y, int x);
+void getmaxyx(WINDOW *win, int y, int x);
+*/
+   ####                             ##  ##  ##
+  ## ##                             ##      ##
+ ##  ##  #####   #####  ## ###      ##  ##  ##   ####
+##   ## ##   ## ##   ## ###  ##     ##  ## #### ##  ##
+####### ######  ##   ## ##   ##     ##  ##  ##  #####
+##   ## ##      ##   ## ##   ##     ##  ##  ##  ##
+##   ##  #####   #####  ##   ##      ## ##   ##  #####
+
+
+   ####      === l i t e ===
+  ## ##
+ ##  ##  #####   #####  ## ###
+##   ## ##   ## ##   ## ###  ##
+####### ######  ##   ## ##   ##
+##   ## ##      ##   ## ##   ##
+##   ##  #####   #####  ##   ##
+
+   http://www.speccyland.net
+
+первая statemachine - st_init, st_poweron, st_mainloop
+внутри st_mainloop следующее:
+    если в FPGA загружена конфигурация, отличная от сервисной, то работает только опрос кнопки power и usb-pooling
+    если загружена сервисная прошивка (можно определить по ID) то работает вторая стэйтмашина:
+        опрос кнопки "TAB" и переключение режима при её нажатии. Так же обновляется на экране сам хидэр таба и выставляется флаг обновления содержимого на экране.
+        в зависимости от выбранного таба вызываются различные функции, которые обслуживают вывод на экран нужной информации и т.д.
+
+!!! при работе с sd/flash через usb не забыть сохранять текущее состояние spi_master и восстанавливать его по завершению
+если сервисная прошивка залита через usb, отлавливать это и кидаться в "полный" loop.
+
+добавить в сервисную прошивку чтение/запись дампов RAM из карточки/на карточку.
+
+
+#include "hal.h"
+#include "curses.h"
+#include "iniparser.h"
+
+typedef struct
+{
+   char name[64][32];
+   uint8_t countItems;
+   uint8_t currentItem;
+   uint8_t startPosition;
+   uint8_t currentPosition;
+} CONFIG;
+
+enum states
+{
+    st_init = 0,
+    st_poweron,
+    st_mainloop
+};
+
+enum states state = st_init;
+enum states nextstate = st_init;
+
+char brd[8] = {0x99,0x9D,0x8B,0x8A,0x8C,0x9D,0x98,0x8A};
+
+const char mainmenuItems[6][15] = {"Configurations","Setup","Selftest","Information","Help","Service"};
+const uint8_t mainmenuItemsPos[7] = {3, 21, 30, 42, 57, 65, 76};
+
+char buffer[80];
+static uint8_t refreshTab = 1;
+static uint8_t currentTab = 0;
+
+void uiInit(void);
+void uiPowerOn(void);
+void uiMainLoop(void);
+
+void uiTabHandler(void);    // TAB-Key Handler
+
+void uiHandler(void)
+{
+    switch (state)
+    {
+        case st_init:       // Инициализация пока не знаю чего :)
+            uiInit();
+            nextstate = st_poweron;
+            break;
+
+        case st_poweron:
+            uiPowerOn();
+            nextstate = st_mainloop;
+            break;
+
+        case st_mainloop:   // Бесконечный (рабочий) цикл
+            uiTabHandler();
+            break;
+    }
+    /// тут будет USB-handler, Floppy-Handler и прочая хрень в таком духе...
+    //  ...
+    //  ...
+    /// --------------------------------------------------------------------
+    state = nextstate;
+}
+
+/// # Local Functions
+/// ###########################################################################
+
+void uiInit(void)
+{
+    // Ждём нажатия на кнопку "Power"
+}
+
+void uiPowerOn(void)
+{
+    // Далее в FPGA заливается прошивка из слота "0" DataFlash. Если FPGA запустился
+    // И major/minor ID подходят, то идём дальше, иначе прыгаем в "тупой" loop, где
+    // работает только связь с компом по USB, чтобы обеспечить возможность обслуживания
+    // платы, заливки прошивок в DataFlash, тестов и т.д.
+
+    // Инициализируем библиотеку curses для вывода на экран
+    // Выводится логотип и пара информационных сообщений.
+
+    initscr();
+
+    attrset(COLOR_BLUE, COLOR_BLACK);
+    addstr("   ####        ");
+    attrset(COLOR_LIGHTGRAY, COLOR_BLACK);
+    addstr("=== l i t e ===\n");
+    attrset(COLOR_BLUE, COLOR_BLACK);
+    addstr("  ## ##                        \n");
+    addstr(" ##  ##  #####   #####  ## ### \n");
+    addstr("##   ## ##   ## ##   ## ###  ##\n");
+    addstr("####### ######  ##   ## ##   ##\n");
+    addstr("##   ## ##      ##   ## ##   ##\n");
+    addstr("##   ##  #####   #####  ##   ##\n");
+    addstr("                               \n");
+    attrset(COLOR_BLACK, COLOR_GRAY);
+    addstr("   http://www.speccyland.net   \n\n");
+    attrset(COLOR_GRAY, COLOR_BLACK);
+    addstr("Booting...\n");
+    SDL_Delay(500);
+    addstr("Init SD-Card.. ");
+    SDL_Delay(500);
+    clr();
+
+    attrset(COLOR_YELLOW, COLOR_BLUE);
+    mvprintw(0,       0, " Aeon Lite - Open Source Reconfigurable Computer                          13:10 ");
+    mvprintw(0, LINES-1, " Service Core v2.0 build 20150709               http://www.speccyland.net '2015 ");
+
+    WINDOW* win = newwin(0,1,80,28);
+    wattrset(win, COLOR_LIGHTGRAY, COLOR_BLACK);
+    wborder(win, brd);
+    mainmenuPaintHeader(win, 0);
+
+    WINDOW* mainwin = newwin(1,4,78,25);
+    uiShowInfoScreen(mainwin);
+}
+
+void mainmenuPaintHeader(WINDOW* win, uint8_t n)
+{
+    uint8_t q;
+    for(q=0;q<6;q++)
+    {
+        if (q==n)
+            wattrset(win, COLOR_WHITE, COLOR_BLACK);
+        else
+            wattrset(win, COLOR_GRAY, COLOR_BLACK);
+        wmvprintw(win, mainmenuItemsPos[q]+2, 1, mainmenuItems[q]);
+    }
+    wattrset(win, COLOR_LIGHTGRAY, COLOR_BLACK);
+    wmovecur(win, 0, 2);
+    waddch(win, '\x97');
+    for(q=1;q<mainmenuItemsPos[n];q++)
+        waddch(win, '\x94');
+    waddch(win, '\xA9');
+    for(q=mainmenuItemsPos[n];q<mainmenuItemsPos[n+1]-2;q++)
+        waddch(win, ' ');
+    waddch(win, '\x90');
+    for(q=mainmenuItemsPos[n+1];q<79;q++)
+        waddch(win, '\x94');
+    waddch(win, '\x86');
+    wmvaddch(win, mainmenuItemsPos[n], 1, '\xA5');
+    wmvaddch(win, mainmenuItemsPos[n+1]-1, 1, '\x88');
+}
+
+void uiMainLoop(void)
+{
+}
+
+uint8_t getAutorunConfiguration(char* conf)
+{
+    return 0;
+}
+
+void uiConfigureFpga(char* conf)
+{
+   uint32_t addr, length;
+   uint8_t value, mode;
+   char filename[80];
+
+   uint8_t index = 0;
+
+   while (iniGetKey("config.ini", conf, "rom", index++, buffer))
+   {
+      iniResolveROM(buffer, filename, &addr, &mode);
+      printw("Found \"ROM\" Key: Filename \"%s\", Addr: 0x%06lX, Mod: %02X\n", filename, addr, mode);
+//      InitRAMFromFile(filename, addr, mode);
+   }
+
+   if (iniGetKey("config.ini", conf, "ramclear", 0, buffer))
+   {
+      iniResolveRAM(buffer, &addr, &length, &value, &mode);
+      printw("Init RAM (0x%06lX, 0x%06lX, 0x%02X, %u)\n",  addr, length, value, mode);
+//      FillRAM(addr, length, value, mode);
+   }
+
+   iniGetKey("config.ini", conf, "bitstream", 0, buffer);
+
+//   FPGA_Configure_from_File(buffer);
+
+   iniGetKey("config.ini", conf, "spimaster", 0, buffer);
+   if(strcmp(buffer,"fpga"))
+   {
+      printf("SPI Master is PIC24\n");
+//      SPI_Mux_PIC24;
+   }
+   else
+   {
+      printf("SPI Master is FPGA\n");
+//      SPI_Mux_FPGA;
+   }
+
+//   MCU_Ready;  // Загрузка окончена. Прошивка в FPGA может стартовать!
+}
+
+/*
+CONFIG inifile;
+
+void startup(void)
+{
+    FATFS filesystem;
+
+    uint8_t result, i, j;
+    char buffer[INI_BUFFER_SIZE];
+    char buffer2[INI_BUFFER_SIZE];
+    char buffer3[INI_BUFFER_SIZE];
+
+    result = f_mount(&filesystem, "", 1);
+    if (result)
+    {
+        addstr("fail\n");
+    }
+    else
+    {
+        addstr("success!\n");
+        f_getlabel("", buffer, 0);
+        addstr("Volume Label: ");
+        attrset(COLOR_LIGHTGRAY, COLOR_BLACK);
+        addstr(buffer);
+        addstr("\n");
+        attrset(COLOR_GRAY, COLOR_BLACK);
+        addstr("Searching for \"config.ini\".. ");
+        result = f_stat("config.ini", NULL);
+        if (result)
+            addstr("not found\n");
+        else
+        {
+            addstr("found\n");
+            addstr("Parsing Configuration File..\n");
+
+            for(result=0;result<32;result++)
+                if (!iniBrowseSections("config.ini", result, inifile.name[result]))
+                    break;
+
+            printw("%i Sections found:\n", result);
+            inifile.countItems = result;
+            inifile.currentItem = 0;
+            inifile.startPosition = 0;
+            inifile.currentPosition = 0;
+
+            attrset(COLOR_LIGHTGRAY, COLOR_BLACK);
+
+            for(result=0;result<inifile.countItems;result++)
+                printw("   %u : %s\n", result + 1, inifile.name[result]);
+
+            attrset(COLOR_GRAY, COLOR_BLACK);
+            addstr("Search for Autorun Configuration.. ");
+
+            for(i=0;i<32;i++)
+                if (!iniBrowseSections("config.ini", i, buffer))
+                    break;
+                else
+                    for(j=0;j<32;j++)
+                        if (!iniBrowseKeys("config.ini", buffer, j, buffer2, buffer3))
+                            break;
+                        else
+                        {
+                            if (!strcmp(buffer2, "autostart"))
+                            {
+                                printw("found\n");
+                                printw("FPGA Configuration with: %s\n", buffer);
+                                i = 32;
+                                break;
+                            }
+                        }
+        }
+    }
+}
+*/
+
+void uiShowInfoScreen(WINDOW* win)
+{
+    wattrset(win, COLOR_LIGHTBLUE, COLOR_BLACK);
+    waddstr(win, "\n\n\n\n\n");
+    waddstr(win, "               ####                            ##  ##  ##  \n");
+    waddstr(win, "              ## ##                            ##      ##  \n");
+    waddstr(win, "             ##  ##  #####   #####  ## ###     ##  ## ####  ##### \n");
+    waddstr(win, "            ##   ## ##   ## ##   ## ###  ##    ##  ##  ##  ##   ##\n");
+    waddstr(win, "            ####### ######  ##   ## ##   ##    ##  ##  ##  ###### \n");
+    waddstr(win, "            ##   ## ##      ##   ## ##   ##    ##  ##  ##  ##     \n");
+    waddstr(win, "            ##   ##  #####   #####  ##   ##     ## ##   ##  ##### \n\n");
+    wattrset(win, COLOR_WHITE, COLOR_GRAY);
+    wmvaddstr(win, 3, 13, "                   Open Source Reconfigurable Computer                  \n");
+    wattrset(win, COLOR_WHITE, COLOR_BLACK);
+    wmvaddstr(win, 27,22, "http://www.speccyland.net\n");
+
+    /// Добавить внизу дополнительную рамку и вывести туда помощь по кнопкам.
+    /// Так же внизу экрана слелать Statusleiste. И выводить туда сообщения.
+    /// Красным ошибки, желтым варнинги, зеленым чтото хорошее, белым нейтральное
+}
+
+void uiTabHandler(void)
+{
+    static uint8_t key;
+    static uint8_t lastkey = 0;
+
+    key = vKeybRd() & 0x08;
+
+    if (key != lastkey)
+    {
+
+    }
+}

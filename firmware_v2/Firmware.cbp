@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Firmware" />
+		<Option pch_mode="2" />
+		<Option compiler="xc16" />
+		<Build>
+			<Target title="PIC24FJ128GB106">
+				<Option output="bin/firmware_pic24fj128gb106.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj128gb106/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ128GB106" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ192GB106">
+				<Option output="bin/firmware_pic24fj192gb106.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj192gb106/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ192GB106" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ256GB106">
+				<Option output="bin/firmware_pic24fj256gb106.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj256gb106/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ256GB106" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ128GB206">
+				<Option output="bin/firmware_pic24fj128gb206.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj128gb206/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ128GB206" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ256GB206">
+				<Option output="bin/firmware_pic24fj256gb206.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj256gb206/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ256GB206" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ128DA106">
+				<Option output="bin/firmware_pic24fj128da106.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj128da106/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ128DA106" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ256DA106">
+				<Option output="bin/firmware_pic24fj256da106.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj256da106/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ256DA106" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ128DA206">
+				<Option output="bin/firmware_pic24fj128da206.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj128da206/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ128DA206" />
+				</Environment>
+			</Target>
+			<Target title="PIC24FJ256DA206">
+				<Option output="bin/firmware_pic24fj256da206.cof" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/pic24fj256da206/" />
+				<Option type="1" />
+				<Option compiler="xc16" />
+				<Environment>
+					<Variable name="chip" value="24FJ256DA206" />
+				</Environment>
+			</Target>
+			<Environment>
+				<Variable name="chip" value="24FJ128GB106" />
+			</Environment>
+		</Build>
+		<VirtualTargets>
+			<Add alias="Build All Targets" targets="PIC24FJ128GB106;PIC24FJ192GB106;PIC24FJ256GB106;PIC24FJ128GB206;PIC24FJ256GB206;PIC24FJ128DA106;PIC24FJ256DA106;PIC24FJ128DA206;PIC24FJ256DA206;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-O2" />
+			<Add option="-Wall" />
+			<Add option="-mcpu=$(chip)" />
+			<Add directory="." />
+			<Add directory="./usb" />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+			<Add option="-mcpu=$(chip)" />
+			<Add option="-Wl,--report-mem,--heap=1024,--data-init" />
+			<Add option="-Tld/hid_boot_p$(chip).gld" />
+		</Linker>
+		<Unit filename="COPYING" />
+		<Unit filename="bitstream.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bitstream.h" />
+		<Unit filename="curses.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="curses.h" />
+		<Unit filename="dataflash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dataflash.h" />
+		<Unit filename="debug.h" />
+		<Unit filename="eeprom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="eeprom.h" />
+		<Unit filename="errors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="errors.h" />
+		<Unit filename="fat/diskio.h" />
+		<Unit filename="fat/ff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fat/ff.h" />
+		<Unit filename="fat/ffconf.h" />
+		<Unit filename="fat/integer.h" />
+		<Unit filename="fat/mmc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fpga.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fpga.h" />
+		<Unit filename="hal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hal.h" />
+		<Unit filename="iniparser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="iniparser.h" />
+		<Unit filename="ld/hid_boot_p24FJ128DA106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ128DA206.gld" />
+		<Unit filename="ld/hid_boot_p24FJ128GB106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ128GB206.gld" />
+		<Unit filename="ld/hid_boot_p24FJ192GB106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ256DA106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ256DA206.gld" />
+		<Unit filename="ld/hid_boot_p24FJ256GB106.gld" />
+		<Unit filename="ld/hid_boot_p24FJ256GB206.gld" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rtc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rtc.h" />
+		<Unit filename="timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="timer.h" />
+		<Unit filename="todo.txt" />
+		<Unit filename="ui.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ui.h" />
+		<Unit filename="usb/usb.h" />
+		<Unit filename="usb/usb_ch9.h" />
+		<Unit filename="usb/usb_common.h" />
+		<Unit filename="usb/usb_config.h" />
+		<Unit filename="usb/usb_descriptors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device.h" />
+		<Unit filename="usb/usb_device_cdc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device_cdc.h" />
+		<Unit filename="usb/usb_device_generic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb/usb_device_generic.h" />
+		<Unit filename="usb/usb_device_local.h" />
+		<Unit filename="usb/usb_hal.h" />
+		<Unit filename="usb/usb_hal_pic24f.h" />
+		<Unit filename="usb_handler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usb_handler.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

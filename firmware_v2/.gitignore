@@ -1,0 +1,7 @@
+bin/
+obj/
+fat/doc/
+backup/
+CppCheckResults.xml
+*.depend
+*.layout
