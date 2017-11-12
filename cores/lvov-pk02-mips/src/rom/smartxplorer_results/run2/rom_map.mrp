@@ -1,0 +1,30 @@
+Release 14.4 Map P.49d (nt64)
+Xilinx Mapping Report File for Design 'rom'
+
+Design Information
+------------------
+Command Line   : map -ol high -xe n -logic_opt on -t 2 -w -p xc6slx9-tqg144-2 -o
+rom_map.ncd rom.ngd "C:\Users\Kapitan\Documents\8 Bit\Aeon
+Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\smartxplorer_results\run2\rom.pcf
+" 
+Target Device  : xc6slx9
+Target Package : tqg144
+Target Speed   : -2
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Thu Apr 16 09:11:29 2015
+
+Design Summary
+--------------
+Number of errors   :   2
+Number of warnings :   0
+
+Section 1 - Errors
+------------------
+ERROR:Map:116 - The design is empty.  No processing will be done.
+ERROR:Map:52 - Problem encountered processing RPMs. 
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------

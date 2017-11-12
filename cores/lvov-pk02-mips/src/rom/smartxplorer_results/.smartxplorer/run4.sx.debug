@@ -1,0 +1,42 @@
+strategySpecString = ':oc:sqmap:sq:cl:sp:sq:sp:dsol:sphigh:sp:dsxe:spn:sp:dsregister_duplication:spon:sp:dsw:sp:sq:cm:sp:sqpower:sq:cl:sp:sqoff:sq:cm:sp:sqbitgen:sq:cl:sp:sqon:sq:cm:sp:sqsynplify:sq:cl:sp:sq:sq:cm:sp:sqngdbuild:sq:cl:sp:sq:dssd:spC:clcl:clbslUsers:clbslKapitan:clbslDocuments:clbsl8:clspBit:clbslAeon:clspLite:clbslAeon:cldsLite:cldsmaster:clbslcores:clbsllvov_pk:clds01:clbslsrc:clbslrom:sp:dsp:spxc6slx9:dstqg144:ds2:sq:cm:sp:sqtrce:sq:cl:sp:sq:dsv:sp3:sp:dss:sp2:sp:dsn:sp3:sp:dsfastpaths:sp:dsxml:sprom.twx:sp:sq:cm:sp:sqmax_score:sq:cl:spNone:cm:sp:sqindex:sq:cl:sp4:cm:sp:sqpar:sq:cl:sp:sq:sp:dsol:sphigh:sp:dsxe:spn:sp:sq:cm:sp:sqname:sq:cl:sp:sqMapRegDup:sq:cm:sp:sqxst:sq:cl:sp:sq:sq:cm:sp:sqarea:sq:cl:sp:os:sqlut:sq:cm:sp:sqslice_reg:sq:cs:cm:sp:sqversion:sq:cl:sp:sq14.4:sq:cm:sp:sqenv:sq:cl:sp:sq:oc:cc:sq:cm:sp:sqsxLaunchDir:sq:cl:sp:sqC:cl:bsl:bslUsers:bsl:bslKapitan:bsl:bslDocuments:bsl:bsl8:spBit:bsl:bslAeon:spLite:bsl:bslAeon:dsLite:dsmaster:bsl:bslcores:bsl:bsllvov_pk:ds01:bsl:bslsrc:bsl:bslrom:sq:cc'
+Xilinx Environment Variables:
+
+{'XILINX_VIVADO': 'C:\\Xilinx\\Vivado\\2012.4'
+'XILINX_PLANAHEAD': 'C:\\Xilinx\\14.4\\ISE_DS\\PlanAhead'
+'XILINX_DSP': 'C:\\Xilinx\\14.4\\ISE_DS\\ISE'
+'XILINX_EDK': 'C:\\Xilinx\\14.4\\ISE_DS\\EDK'
+'XILINX': 'C:\\Xilinx\\14.4\\ISE_DS\\ISE\\'
+'PATH': 'C:\\Xilinx\\14.4\\ISE_DS\\ISE\\\\lib\\nt64;C:\\Xilinx\\14.4\\ISE_DS\\ISE\\\\bin\\nt64;C:\\Xilinx\\Vivado_HLS\\2012.4\\bin;C:\\Xilinx\\14.4\\ISE_DS\\ISE\\bin\\nt64;C:\\Xilinx\\14.4\\ISE_DS\\ISE\\lib\\nt64;C:\\Xilinx\\14.4\\ISE_DS\\ISE\\..\\..\\..\\DocNav;C:\\Xilinx\\Vivado\\2012.4\\bin;C:\\Xilinx\\14.4\\ISE_DS\\PlanAhead\\bin;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\bin\\nt64;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\lib\\nt64;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\gnu\\microblaze\\nt64\\bin;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\gnu\\powerpc-eabi\\nt64\\bin;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\gnuwin\\bin;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\gnu\\arm\\nt\\bin;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\gnu\\microblaze\\linux_toolchain\\nt64_be\\bin;C:\\Xilinx\\14.4\\ISE_DS\\EDK\\gnu\\microblaze\\linux_toolchain\\nt64_le\\bin;C:\\Xilinx\\14.4\\ISE_DS\\common\\bin\\nt64;C:\\Xilinx\\14.4\\ISE_DS\\common\\lib\\nt64;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Caminova\\Document Express DjVu Plug-in\\;C:\\PROGRAM FILES\\COMMON FILES\\MICROSOFT SHARED\\WINDOWS LIVE;C:\\PROGRAM FILES (X86)\\COMMON FILES\\MICROSOFT SHARED\\WINDOWS LIVE;C:\\PROGRAM FILES (X86)\\INTEL\\ICLS CLIENT\\;C:\\PROGRAM FILES\\INTEL\\ICLS CLIENT\\;C:\\Windows\\SYSTEM32;C:\\Windows;C:\\Windows\\SYSTEM32\\WBEM;C:\\Windows\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\;C:\\PROGRAM FILES\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\DAL;C:\\PROGRAM FILES\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\IPT;C:\\PROGRAM FILES (X86)\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\DAL;C:\\PROGRAM FILES (X86)\\INTEL\\INTEL(R) MANAGEMENT ENGINE COMPONENTS\\IPT;C:\\PROGRAM FILES (X86)\\INTEL\\OPENCL SDK\\2.0\\BIN\\X86;C:\\PROGRAM FILES (X86)\\INTEL\\OPENCL SDK\\2.0\\BIN\\X64;C:\\PROGRAM FILES\\COMMON FILES\\LENOVO;C:\\PROGRAM FILES (X86)\\WINDOWS LIVE\\SHARED;C:\\SWTOOLS\\READYAPPS;C:\\PROGRAM FILES (X86)\\SYMANTEC\\VIP ACCESS CLIENT\\;C:\\PROGRAM FILES (X86)\\COMMON FILES\\LENOVO;C:\\Program Files\\ThinkPad\\Bluetooth Software\\;C:\\Program Files\\ThinkPad\\Bluetooth Software\\syswow64;C:\\Program Files (x86)\\Lenovo\\Access Connections\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\Lenovo\\Password Manager\\;C:\\Program Files (x86)\\Microchip\\MPLAB C32 Suite\\bin;C:\\Dwimperl\\perl\\bin;C:\\Dwimperl\\perl\\site\\bin;C:\\Dwimperl\\c\\bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\bin;C:\\Program Files\\IVI Foundation\\IVI\\bin;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin'}
+envDict = {}
+Kapitan-THINK_3.stat:C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\smartxplorer_results\.smartxplorer\.sx.keepAlive.Kapitan-THINK_3
+INFO: total number of threads running this host None
+...searching for file: mapregdup.xds
+Creating XDS file ... mapregdup.xds
+###################################
+
+      <property name = "Map:Placer Effort Level"
+               value = "High" />
+      <property name = "Map:Placer Extra Effort"
+               value = "Normal" />
+      <property name = "Map:Register Duplication"
+               value = "On" />
+      <property name = "Place &amp; Route:Place &amp; Route Effort Level (Overall)"
+               value = "High" />
+      <property name = "Place &amp; Route:Extra Effort (Highest PAR level only)"
+               value = "Normal" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Number of Paths in Error/Verbose Report"
+               value = "3" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Report Type"
+               value = "Verbose Report" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Change Device Speed To"
+               value = "-2" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Report Paths by Endpoint"
+               value = "3" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Report Fastest Path(s) in Each Constraint"
+               value = "true" />
+###################################
+launching map with options  -ol high -xe n -register_duplication on -w  -p xc6slx9-tqg144-2 -o rom_map.ncd  C:cl:bslUsers:bslKapitan:bslDocuments:bsl8:spBit:bslAeon:spLite:bslAeon:dsLite:dsmaster:bslcores:bsllvov_pk:ds01:bslsrc:bslrom:bslsmartxplorer_results:bslrun4:bslrom.pcf...
+runTask: map rom.ngd -ol high -xe n -register_duplication on -w -p xc6slx9-tqg144-2 -o rom_map.ncd C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\smartxplorer_results\run4\rom.pcf
+args = ['map', 'rom.ngd', '-ol', 'high', '-xe', 'n', '-register_duplication', 'on', '-w', '-p', 'xc6slx9-tqg144-2', '-o', 'rom_map.ncd', 'C:\\Users\\Kapitan\\Documents\\8 Bit\\Aeon Lite\\Aeon-Lite-master\\cores\\lvov_pk-01\\src\\rom\\smartxplorer_results\\run4\\rom.pcf']
+ERROR: Missing output file: rom_map.ncd for program: map
+C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\smartxplorer_results\.smartxplorer\Kapitan-THINK_3.stat- ERROR: Failed in MAP

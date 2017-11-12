@@ -1,0 +1,16 @@
+<DesignStrategy goal="Timing Performance" strategy="SmartXplorer - Map Register Duplication" version="12.1">
+   <Description><![CDATA[      This is a Timing Performance optimized strategy.  This strategy is also one of the strategies used by SmartXplorer.  If you wish to run SmartXplorer to automatically try multiple Timing Performance strategies, including this one, close this dialog and then select Tools -> SmartXplorer -> Launch SmartXplorer.   ]]></Description>
+   <DeviceList devices="spartan6,spartan6l,aspartan6,qspartan6,qspartan6l" />
+   <Properties>
+      <property name = "Map:Placer Effort Level"
+               value = "High" />
+      <property name = "Place &amp; Route:Place &amp; Route Effort Level (Overall)"
+               value = "High" />
+      <property name = "Map:Placer Extra Effort"
+               value = "Normal" />
+      <property name = "Map:Register Duplication"
+               value = "On" />
+      <property name = "Place &amp; Route:Extra Effort (Highest PAR level only)"
+               value = "Normal" />
+   </Properties>
+</DesignStrategy>

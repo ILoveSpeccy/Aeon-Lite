@@ -1,0 +1,35 @@
+
+Release 14.4 SmartXplorer
+Copyright(c) 1995-2010 Xilinx, Inc. All rights reserved.
+"C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\smartxplorer.exe" -p xc6slx9-tqg144-2 -b -wd smartxplorer_results rom.ngd -to "-v 3 -s 2 -n 3 -fastpaths -xml rom.twx " -host_list hostlistfile.txt -max_runs 7
+
+SmartXplorer Settings: 
+
+designName=C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\rom.ngd 
+write_dir=C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\smartxplorer_results 
+host_list=C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\hostlistfile.txt 
+part=xc6slx9-tqg144-2 
+strategy_file=None 
+notify=None 
+source_dir=C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom 
+batch_mode=True 
+run_all_strategies=False 
+list_all_strategies=False 
+remote_command=rsh
+area_report="lut;slice_reg"
+power_options=off
+trce_options="-v 3 -s 2 -n 3 -fastpaths -xml rom.twx "
+max_runs=7
+
+Starting SmartXplorer...
+See file 'smartxplorer.html' for real-time report.
+
+
+Running SmartXplorer strategies...
+
+
+Ctrl C detected
+INFO: ...Killing all jobs
+SmartXplorer is killing all jobs...please be patient
+
+SmartXplorer Aborted.

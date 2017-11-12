@@ -1,0 +1,460 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0014)about:SXplorer -->
+<html>
+<head>
+
+    <noscript>
+    <!--
+        We have the "refresh" meta-tag in case the user's browser does
+	not correctly support JavaScript or has JavaScript disabled.
+     <meta http-equiv="refresh" content="2">
+     -->
+
+     </noscript>
+
+     <script language="JavaScript">
+
+     var sURL = unescape(window.location.pathname);
+
+     function doLoad()
+     {
+         // the timeout value should be the same as in the "refresh" meta-tag
+         setTimeout( "refresh()", 31536000000);
+     }
+
+     function refresh()
+     {
+         //  This version of the refresh function will cause a new
+         //  entry in the visitor's history.  It is provided for
+         //  those browsers that only support JavaScript 1.0.
+         //
+         //window.location.href = sURL;
+         // CR 452967
+         window.location.reload( false );
+     }
+
+     </script>
+
+     <script language="JavaScript">
+     function sxtooltip_findPosX(obj) {
+       var curleft = 0;
+       if (obj.offsetParent) {
+           while (obj.offsetParent) {
+            curleft += obj.offsetLeft
+            obj = obj.offsetParent;
+           }
+       } else if (obj.x)
+           curleft += obj.x;
+       return curleft;
+     }
+
+
+     function sxtooltip_findPosY(obj) {
+         var curtop = 0;
+         if (obj.offsetParent) {
+            while (obj.offsetParent) {
+               curtop += obj.offsetTop
+               obj = obj.offsetParent;
+            }
+         } else if (obj.y)
+            curtop += obj.y;
+         return curtop;
+     }
+
+
+     function sxtooltip_show(tooltipId, parentId, x1, y1) {
+         // x1 and y1 are (left, down) offsets from the upper-left corner
+         // of the parent
+         var ie4 = document.all;
+         var tt = document.getElementById(tooltipId);
+
+         if ((tt.style.top == '' || tt.style.top == 0) ||
+             (tt.style.left == '' || tt.style.left == 0)) {
+
+             // need to offset widths for IE
+             ieWidthOffset = 0
+             iePosOffset = 0
+             if (ie4) {
+                 ieWidthOffset = 300
+                 iePosOffset = 20
+             }
+             tt.style.width = ieWidthOffset + tt.offsetWidth + 'px';
+             tt.style.height = tt.offsetHeight + 'px';
+
+             var parent = document.getElementById(parentId);
+
+             if (x1 < 0 ) x1 = 0;
+
+             var x = sxtooltip_findPosX(parent) + x1;
+             var y = sxtooltip_findPosY(parent) + y1;
+
+             tt.style.top = iePosOffset + y + 'px';
+             tt.style.left = iePosOffset + x + 'px';
+        }
+
+        tt.style.visibility = 'visible';
+     }
+
+     function sxtooltip_hide(id) {
+        tt = document.getElementById(id);
+        tt.style.visibility = 'hidden';
+     }
+     </script>
+
+
+</head>
+
+	<title>SmartXplorer Report</title>
+	<style type="text/css">
+		/***
+			The following is just an example of how to use the table.
+			You can override any class names to be used if you wish.
+		***/
+		table.toplevel {
+			font-family:Lucida Grande, Verdana;
+			font-size:0.8em;
+			width:60%;
+			border:1px solid #ccc;
+			border-collapse:collapse;
+			cursor:default;
+                        margin-left: 10px;
+                        margin-right: 10px;
+		}
+		table th{
+			padding:2px;
+			font-weight:600;
+                        background-color: cornflowerblue;
+                        background-color: #87cefa;
+		}
+		table td{
+			padding:2px;
+			font-weight:normal;
+		}
+		table thead td, table thead th {
+			background-repeat:no-repeat;
+			background-position:top right;
+		}
+		table tbody tr td{
+			padding:2px;
+			border-bottom:1px solid #ddd;
+		}
+		table tbody tr.alt td{
+			background: #e3edfa;
+		}
+		table tbody tr.selected td{
+			background: yellow;
+		}
+		table tbody tr:hover td{
+			background: #a6c2e7;
+			background: #FFFFCC;
+		}
+		table tbody tr.selected:hover td{
+			background:#ff9;
+		}
+                .defaultCellColor {
+                        background-color: lightsteelblue;
+                        background-color: #fcba7a;
+
+                }
+                .timingMetCellColor {
+                        background-color: #ccffcc;
+                }
+                .bestStrategyCellColor {
+                        background-color: #00FF00;
+                }
+                .alternateCellColor {
+                        background-color: #efeeee;
+                }
+
+
+                .sxtooltip {
+  		        visibility: hidden;
+                        position: absolute;
+                        background: beige;
+                        background: lightcyan;
+                        background: blanchedalmond;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+                        font: normal 10pt sans-serif;
+                        padding: 3px;
+                        border: solid 1px;
+                }
+
+	</style>
+
+
+       <!--
+           Use the "onload" event to start the refresh process.
+        -->
+<body onload="doLoad()">
+
+	<h2><u>SmartXplorer Report </u></h2>
+
+	<br />
+
+	<div>
+        Release 14.4 SmartXplorer <br />Copyright(c) 1995-2010 <a href="http://www.xilinx.com"> Xilinx </a>, Inc. All rights reserved. <br /> <br />
+	<b> "C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\smartxplorer.exe" -p xc6slx9-tqg144-2 -b -wd smartxplorer_results rom.ngd -to "-v 3 -s 2 -n 3 -fastpaths -xml rom.twx " -host_list hostlistfile.txt -max_runs 7 <b/> <br />
+
+	<br />
+
+
+    <h3>Run Summary</h3>
+
+    <table id="t1" class="toplevel"
+        multiple="true" alternateRows="true" maxSortable="1"
+        cellpadding="0" cellspacing="0" border="1">
+    <thead>
+
+        <tr>
+            <th field="Strategy" dataType="String" align="left" valign="top">Strategy</th>
+            <th field="Host" dataType="String" valign="top">Host</th>
+            <th field="Output" dataType="String" align="left" valign="top">Output</th>
+            <th field="Status" dataType="String" align="left" valign="top">Status</th>
+            <th field="Current" dataType="Number" sort="asc" align="center" valign="top">Timing <br> Score</th>
+            <th field="Current" dataType="Number" sort="asc" align="center" valign="top">Worst Case <br> Slack</th>
+            <th field="Status" dataType="String" align="center" valign="top"> Luts</th>
+            <th field="Status" dataType="String" align="center" valign="top"> Slice <br> Registers</th>
+            
+            <th field="Run Time" dataType="Number" sort="asc" align="center" valign="top">Total <br> RunTime </th>
+
+        </tr>
+        <tr>  </tr>
+    </thead>
+
+    <tbody>
+         
+        <tr >
+        <td id="strat1"><span
+        onmouseover="sxtooltip_show('stratTt1', 'strat1', 20, 20);"
+        onmouseout="sxtooltip_hide('stratTt1');">
+        MapRunTime
+        </span></td>
+        <div id="stratTt1" class="sxtooltip">
+        map  -ol high -w ; par  -ol high 
+        </div>
+
+        
+        <td id="host0"><span
+        onmouseover="sxtooltip_show('hostTt0', 'host0', 20, 20)"
+        onmouseout="sxtooltip_hide('hostTt0');">
+        Kapitan-THINK
+        </span></td>
+        <div id="hostTt0" class="sxtooltip">
+        Windows_NT, Intel64 Family 6 Model 58 Stepping 9, GenuineIntel, 4-processor, -1G RAM
+        </div> 
+        <td><a href=run1\rom_sx.log target=_blank>run1</a></td>
+        <td>Aborted</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        
+        <td>0h 0m 24s</td></tr>
+        <tr class="defaultCellColor" >
+        <td id="strat2"><span
+        onmouseover="sxtooltip_show('stratTt2', 'strat2', 20, 20);"
+        onmouseout="sxtooltip_hide('stratTt2');">
+        MapLogicOpt
+        </span></td>
+        <div id="stratTt2" class="sxtooltip">
+        map  -ol high -xe n -logic_opt on -t 2 -w ; par  -ol high -xe n 
+        </div>
+
+        
+        <td id="host1"><span
+        onmouseover="sxtooltip_show('hostTt1', 'host1', 20, 20)"
+        onmouseout="sxtooltip_hide('hostTt1');">
+        Kapitan-THINK
+        </span></td>
+        <div id="hostTt1" class="sxtooltip">
+        Windows_NT, Intel64 Family 6 Model 58 Stepping 9, GenuineIntel, 4-processor, -1G RAM
+        </div> 
+        <td><a href=run2\rom_sx.log target=_blank>run2</a></td>
+        <td>Aborted</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        
+        <td>0h 0m 24s</td></tr>
+        <tr >
+        <td id="strat3"><span
+        onmouseover="sxtooltip_show('stratTt3', 'strat3', 20, 20);"
+        onmouseout="sxtooltip_hide('stratTt3');">
+        MapGlobOptIOReg
+        </span></td>
+        <div id="stratTt3" class="sxtooltip">
+        map  -ol high -global_opt speed -pr b -w ; par  -ol high -xe n 
+        </div>
+
+        
+        <td id="host2"><span
+        onmouseover="sxtooltip_show('hostTt2', 'host2', 20, 20)"
+        onmouseout="sxtooltip_hide('hostTt2');">
+        Kapitan-THINK
+        </span></td>
+        <div id="hostTt2" class="sxtooltip">
+        Windows_NT, Intel64 Family 6 Model 58 Stepping 9, GenuineIntel, 4-processor, -1G RAM
+        </div> 
+        <td><a href=run3\rom_sx.log target=_blank>run3</a></td>
+        <td>Aborted</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        
+        <td>0h 0m 24s</td></tr>
+        <tr class="defaultCellColor" >
+        <td id="strat4"><span
+        onmouseover="sxtooltip_show('stratTt4', 'strat4', 20, 20);"
+        onmouseout="sxtooltip_hide('stratTt4');">
+        MapRegDup
+        </span></td>
+        <div id="stratTt4" class="sxtooltip">
+        map  -ol high -xe n -register_duplication on -w ; par  -ol high -xe n 
+        </div>
+
+        
+        <td id="host3"><span
+        onmouseover="sxtooltip_show('hostTt3', 'host3', 20, 20)"
+        onmouseout="sxtooltip_hide('hostTt3');">
+        Kapitan-THINK
+        </span></td>
+        <div id="hostTt3" class="sxtooltip">
+        Windows_NT, Intel64 Family 6 Model 58 Stepping 9, GenuineIntel, 4-processor, -1G RAM
+        </div> 
+        <td><a href=run4\rom_sx.log target=_blank>run4</a></td>
+        <td>Aborted</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        
+        <td>0h 0m 24s</td></tr>
+        <tr >
+        <td id="strat5"><span
+        onmouseover="sxtooltip_show('stratTt5', 'strat5', 20, 20);"
+        onmouseout="sxtooltip_hide('stratTt5');">
+        MapExtraEffortIOReg
+        </span></td>
+        <div id="stratTt5" class="sxtooltip">
+        map  -ol high -xe n -pr b -t 7 -w ; par  -ol high -xe n 
+        </div>
+
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        
+        <td>None</td></tr>
+        <tr class="defaultCellColor" >
+        <td id="strat6"><span
+        onmouseover="sxtooltip_show('stratTt6', 'strat6', 20, 20);"
+        onmouseout="sxtooltip_hide('stratTt6');">
+        MapLogOptRegDup
+        </span></td>
+        <div id="stratTt6" class="sxtooltip">
+        map  -ol high -xe n -logic_opt on -register_duplication on -t 2 -w ; par  -ol high -xe n 
+        </div>
+
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        
+        <td>None</td></tr>
+        <tr >
+        <td id="strat7"><span
+        onmouseover="sxtooltip_show('stratTt7', 'strat7', 20, 20);"
+        onmouseout="sxtooltip_hide('stratTt7');">
+        MapExtraEffort2
+        </span></td>
+        <div id="stratTt7" class="sxtooltip">
+        map  -ol high -xe n -t 3 -w ; par  -ol high 
+        </div>
+
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        <td>None</td>
+        
+        <td>None</td></tr>
+    </tbody>
+    </table>
+
+    <br />     <br />
+
+        <h3>Best Strategy: None (None), Timing Score: None, Runtime: None</h3>
+
+        <table id="t3" class="toplevel"
+                multiple="true" alternateRows="true" maxSortable="1"
+                cellpadding="0" cellspacing="0" border="1">
+        <thead>
+
+                <tr>
+                        <th field="Command Lines" dataType="String" align="left" valign="top">Command Lines</th>
+                </tr>
+                <tr>  </tr>
+        </thead>
+
+        <tbody>
+             
+        </tbody>
+        </table>
+
+        <br />  <br />
+
+	<h3>Environment Variables</h3>
+
+	<table id="t2" class="toplevel"
+		multiple="true" alternateRows="true" maxSortable="1"
+		cellpadding="0" cellspacing="0" border="1">
+	<thead>
+
+		<tr>
+			<th field="Name" dataType="String" align="left" valign="top">Name</th>
+			<th field="Value" dataType="String" valign="top">Value</th>
+		</tr>
+		<tr>  </tr>
+	</thead>
+
+	<tbody>
+	     
+        <tr >
+        <td>XILINX_VIVADO</td>
+        <td>C:\Xilinx\Vivado\2012.4</td></tr>
+        <tr class="alternateCellColor" >
+        <td>XILINX_PLANAHEAD</td>
+        <td>C:\Xilinx\14.4\ISE_DS\PlanAhead</td></tr>
+        <tr >
+        <td>XILINX_DSP</td>
+        <td>C:\Xilinx\14.4\ISE_DS\ISE</td></tr>
+        <tr class="alternateCellColor" >
+        <td>XILINX_EDK</td>
+        <td>C:\Xilinx\14.4\ISE_DS\EDK</td></tr>
+        <tr >
+        <td>PATH</td>
+        <td>C:\Xilinx\14.4\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.4\ISE_DS\ISE\\bin\nt64;C:\Xilinx\Vivado_HLS\2012.4\bin;C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.4\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.4\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\Vivado\2012.4\bin;C:\Xilinx\14.4\ISE_DS\PlanAhead\bin;C:\Xilinx\14.4\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.4\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.4\ISE_DS\common\bin\nt64;C:\Xilinx\14.4\ISE_DS\common\lib\nt64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Caminova\Document Express DjVu Plug-in\;C:\PROGRAM FILES\COMMON FILES\MICROSOFT SHARED\WINDOWS LIVE;C:\PROGRAM FILES (X86)\COMMON FILES\MICROSOFT SHARED\WINDOWS LIVE;C:\PROGRAM FILES (X86)\INTEL\ICLS CLIENT\;C:\PROGRAM FILES\INTEL\ICLS CLIENT\;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\INTEL\OPENCL SDK\2.0\BIN\X86;C:\PROGRAM FILES (X86)\INTEL\OPENCL SDK\2.0\BIN\X64;C:\PROGRAM FILES\COMMON FILES\LENOVO;C:\PROGRAM FILES (X86)\WINDOWS LIVE\SHARED;C:\SWTOOLS\READYAPPS;C:\PROGRAM FILES (X86)\SYMANTEC\VIP ACCESS CLIENT\;C:\PROGRAM FILES (X86)\COMMON FILES\LENOVO;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Lenovo\Password Manager\;C:\Program Files (x86)\Microchip\MPLAB C32 Suite\bin;C:\Dwimperl\perl\bin;C:\Dwimperl\perl\site\bin;C:\Dwimperl\c\bin;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin</td></tr>
+        <tr class="alternateCellColor" >
+        <td>XILINX</td>
+        <td>C:\Xilinx\14.4\ISE_DS\ISE\</td></tr>
+	</tbody>
+	</table>
+
+	<br /> 	<br />
+
+
+</body>
+</html>

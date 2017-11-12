@@ -1,0 +1,3 @@
+START:Strategy:3:MapGlobOptIOReg
+REMOTE_PID:24912
+RUNNING:24912:25056:MapGlobOptIOReg:map:rom.ngd: -ol high -global_opt speed -pr b -w  -p xc6slx9-tqg144-2 -o rom_map.ncd  C:cl:bslUsers:bslKapitan:bslDocuments:bsl8:spBit:bslAeon:spLite:bslAeon:dsLite:dsmaster:bslcores:bsllvov_pk:ds01:bslsrc:bslrom:bslsmartxplorer_results:bslrun3:bslrom.pcf

@@ -1,0 +1,38 @@
+Release 14.4 ngdbuild P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-2 rom.ngc rom.ngd
+
+Reading NGO file "C:/Users/Kapitan/Documents/8 Bit/Aeon
+Lite/Aeon-Lite-master/cores/lvov_pk-01/src/rom/rom.ngc" ...
+Loading design module "C:\Users\Kapitan\Documents\8 Bit\Aeon
+Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom/rom.ngc"...
+WARNING:NgdBuild:578 - Design contains no instances.
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   1
+
+Total memory usage is 158472 kilobytes
+
+Writing NGD file "rom.ngd" ...
+Total REAL time to NGDBUILD completion:  7 sec
+Total CPU time to NGDBUILD completion:   7 sec
+
+Writing NGDBUILD log file "rom.bld"...

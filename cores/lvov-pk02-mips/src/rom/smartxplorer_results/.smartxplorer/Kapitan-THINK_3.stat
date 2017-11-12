@@ -1,0 +1,4 @@
+START:Strategy:4:MapRegDup
+REMOTE_PID:26080
+RUNNING:26080:26096:MapRegDup:map:rom.ngd: -ol high -xe n -register_duplication on -w  -p xc6slx9-tqg144-2 -o rom_map.ncd  C:cl:bslUsers:bslKapitan:bslDocuments:bsl8:spBit:bslAeon:spLite:bslAeon:dsLite:dsmaster:bslcores:bsllvov_pk:ds01:bslsrc:bslrom:bslsmartxplorer_results:bslrun4:bslrom.pcf
+DONE:map:211

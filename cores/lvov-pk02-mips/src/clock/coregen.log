@@ -1,0 +1,49 @@
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+WARNING:sim - A core named 'clock' already exists in the project. Output
+   products for this core may be overwritten.
+Resolving generics for 'clock'...
+WARNING:sim - A core named 'clock' already exists in the project. Output
+   products for this core may be overwritten.
+Applying external generics to 'clock'...
+Delivering associated files for 'clock'...
+WARNING:sim - Component clk_wiz_v3_6 does not have a valid model name for VHDL
+   synthesis
+Delivering EJava files for 'clock'...
+Delivered 3 files into directory C:/Users/Kapitan/Documents/8 Bit/Aeon
+Lite/Aeon-Lite-master/cores/Lvov PK02 - MIPS/src/clock/tmp/_cg/clock
+Delivered 1 file into directory C:/Users/Kapitan/Documents/8 Bit/Aeon
+Lite/Aeon-Lite-master/cores/Lvov PK02 - MIPS/src/clock/tmp/_cg/clock
+Generating ASY schematic symbol...
+Loading device for application Rf_Device from file '6slx9.nph' in environment
+C:\Xilinx\14.7\ISE_DS\ISE\.
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating SYM schematic symbol for 'clock'...
+Generating ISE project...
+XCO file found: clock.xco
+XMDF file found: clock_xmdf.tcl
+Adding C:/Users/Kapitan/Documents/8 Bit/Aeon Lite/Aeon-Lite-master/cores/Lvov
+PK02 - MIPS/src/clock/tmp/_cg/clock.asy -view all -origin_type imported
+Adding C:/Users/Kapitan/Documents/8 Bit/Aeon Lite/Aeon-Lite-master/cores/Lvov
+PK02 - MIPS/src/clock/tmp/_cg/clock.ucf -view all -origin_type created
+Adding C:/Users/Kapitan/Documents/8 Bit/Aeon Lite/Aeon-Lite-master/cores/Lvov
+PK02 - MIPS/src/clock/tmp/_cg/clock.vhd -view all -origin_type created
+INFO:HDLCompiler:1061 - Parsing VHDL file "C:/Users/Kapitan/Documents/8 Bit/Aeon
+   Lite/Aeon-Lite-master/cores/Lvov PK02 - MIPS/src/clock/tmp/_cg/clock.vhd"
+   into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding C:/Users/Kapitan/Documents/8 Bit/Aeon Lite/Aeon-Lite-master/cores/Lvov
+PK02 - MIPS/src/clock/tmp/_cg/clock.vho -view all -origin_type imported
+INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
+   Please set the new top explicitly by running the "project set top" command.
+   To re-calculate the new top automatically, set the "Auto Implementation Top"
+   property to true.
+Top level has been set to "/clock"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
+Wrote CGP file for project 'clock'.

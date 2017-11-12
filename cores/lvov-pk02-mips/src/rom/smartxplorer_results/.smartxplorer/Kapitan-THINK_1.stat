@@ -1,0 +1,3 @@
+START:Strategy:2:MapLogicOpt
+REMOTE_PID:26172
+RUNNING:26172:26012:MapLogicOpt:map:rom.ngd: -ol high -xe n -logic_opt on -t 2 -w  -p xc6slx9-tqg144-2 -o rom_map.ncd  C:cl:bslUsers:bslKapitan:bslDocuments:bsl8:spBit:bslAeon:spLite:bslAeon:dsLite:dsmaster:bslcores:bsllvov_pk:ds01:bslsrc:bslrom:bslsmartxplorer_results:bslrun2:bslrom.pcf

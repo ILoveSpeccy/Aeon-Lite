@@ -1,0 +1,3 @@
+START:Strategy:1:MapRunTime
+REMOTE_PID:24868
+RUNNING:24868:26044:MapRunTime:map:rom.ngd: -ol high -w  -p xc6slx9-tqg144-2 -o rom_map.ncd  C:cl:bslUsers:bslKapitan:bslDocuments:bsl8:spBit:bslAeon:spLite:bslAeon:dsLite:dsmaster:bslcores:bsllvov_pk:ds01:bslsrc:bslrom:bslsmartxplorer_results:bslrun1:bslrom.pcf

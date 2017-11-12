@@ -1,0 +1,29 @@
+
+Command Line : 
+-------------
+map C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\smartxplorer_results\run3\rom.ngd -ol high -global_opt speed -pr b -w -p xc6slx9-tqg144-2 -o rom_map.ncd C:\Users\Kapitan\Documents\8 Bit\Aeon Lite\Aeon-Lite-master\cores\lvov_pk-01\src\rom\smartxplorer_results\run3\rom.pcf
+
+Release 14.4 - Map P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Using target part "6slx9tqg144-2".
+Running global optimization...
+Mapping design into LUTs...
+Writing file rom_map.ngm...
+Running directed packing...
+Running delay-based LUT packing...
+ERROR:Pack:198 - NCD was not produced.  All logic was removed from the design. 
+   This is usually due to having no input or output PAD connections in the
+   design and no nets or symbols marked as 'SAVE'.  You can either add PADs or
+   'SAVE' attributes to the design, or run 'map -u' to disable logic trimming in
+   the mapper.  For more information on trimming issues search the Xilinx
+   Answers database for "ERROR:Pack:198" and read the Master Answer Record for
+   MAP Trimming Issues.
+
+Mapping completed.
+See MAP report file "rom_map.mrp" for details.
+Problem encountered during the packing phase.
+
+Design Summary
+--------------
+Number of errors   :   1
+Number of warnings :   0
